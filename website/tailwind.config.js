@@ -20,7 +20,7 @@ module.exports = {
         "nav-black": "#000300",
         "footer": "#383433",
         "oraange": "#FF5C00",
-        "hamburger": "#F8E7DF",
+        "hamburger": "#D3CBBD",
       },
       fontFamily: {
         head: "Impact",

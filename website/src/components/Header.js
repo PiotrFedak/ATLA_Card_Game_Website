@@ -12,14 +12,14 @@ const Header = () => {
     return (
 
         <div className=" border-b-[2px] border-oraange bg-white dark:bg-custom-black min-h-[114px] max-sm:min-h-[89px] fixed top-0 left-0 w-full z-50 rounded-b-2xl ">
-            <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-custom-dark dark:text-white'>
-                <h1 className='w-full text-4xl font-bold text-[#FF5C00]'>ATLA.</h1>
-                <ul className='hidden md:flex'>
+            <div className='flex justify-between items-center h-28 max-w-[1240px] mx-auto px-4 text-custom-dark dark:text-white'>
+                <h1 className='w-full text-5xl font-bold text-[#FF5C00]'>ATLA.</h1>
+                <ul className='hidden md:flex h-14'>
                     <li className='p-4 '>Home</li>
                     <li className='p-4'>Stats</li>
                     <li className='p-4'>PalceHolder</li>
                     <li className='p-4'>About</li>
-                    <div className="">
+                    <div className="p-4">
                         <Switcher />
                     </div>
                 </ul>
@@ -32,7 +32,7 @@ const Header = () => {
                     <li className='p-4 border-b border-gray-600'>Stats</li>
                     <li className='p-4 border-b border-gray-600'>PalceHolder</li>
                     <li className='p-4 border-b border-gray-600'>About</li>
-                    <li className='p-4'><Switcher /></li>
+                    <li className=''><Switcher /></li>
                 </ul>
             </div>
         </div>
