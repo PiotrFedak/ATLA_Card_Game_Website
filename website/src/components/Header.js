@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Switcher from "../Switcher";
 
@@ -16,7 +17,9 @@ const Header = () => {
                 <h1 className='w-full text-5xl font-bold text-[#FF5C00]'>ATLA.</h1>
                 <ul className='hidden md:flex h-14'>
                     <li className='p-4 '>Home</li>
-                    <li className='p-4'>Stats</li>
+                    <li className='p-4'>
+                        <Link to="/Stats">Stats</Link>
+                    </li>
                     <li className='p-4'>PalceHolder</li>
                     <li className='p-4'>About</li>
                     <div className="p-4">
@@ -29,7 +32,9 @@ const Header = () => {
                 <ul className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900  bg-hamburger dark:bg-nav-black ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}>
                     <h1 className='w-full text-3xl font-bold text-[#FF5C00] m-4'>ATLA.</h1>
                     <li className='p-4 border-b border-gray-600'>Home</li>
-                    <li className='p-4 border-b border-gray-600'>Stats</li>
+                    <li className='p-4 border-b border-gray-600'>
+                        <Link to="/Stats">Stats</Link>
+                    </li>
                     <li className='p-4 border-b border-gray-600'>PalceHolder</li>
                     <li className='p-4 border-b border-gray-600'>About</li>
                     <li className=''><Switcher /></li>
