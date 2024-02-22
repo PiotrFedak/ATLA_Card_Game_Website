@@ -4,9 +4,9 @@ import Header from "../components/header";
 
 const Home = () => {
   return (
-    <div className='flex flex-col justify-center items-center h-screen overflow-hidden bg-white dark:bg-custom-black'>
+    <div className='flex items-center h-screen overflow-hidden bg-white dark:bg-custom-black'>
       <Header />
-      <div className="text-center text-custom-dark  dark:text-white">
+      <div className="text-custom-dark  dark:text-white">
         <p className="text-lg font-body">Lorem ipsum dolor sit amet, cons</p>
       </div>
       <Footer />

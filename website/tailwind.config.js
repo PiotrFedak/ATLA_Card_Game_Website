@@ -17,8 +17,10 @@ module.exports = {
       colors: {
         "custom-black": "#0D1117",
         "custom-white": "#EDDECE",
+        "nav-black": "#000300",
         "footer": "#383433",
         "oraange": "#FF5C00",
+        "hamburger": "#F8E7DF",
       },
       fontFamily: {
         head: "Impact",
