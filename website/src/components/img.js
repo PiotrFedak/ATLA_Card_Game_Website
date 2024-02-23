@@ -1,7 +1,14 @@
 import React from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 import aang2 from '../img/aang2.png';
 
 const Img = () => {
+    const isMobile = useMediaQuery('(max-width: 1000px)');
+
+    if (isMobile) {
+        return null;
+    }
+
     return (
         <div>
             <img

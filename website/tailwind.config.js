@@ -21,6 +21,8 @@ module.exports = {
         "footer": "#383433",
         "oraange": "#FF5C00",
         "hamburger": "#D3CBBD",
+        "phone": "#FFEAB0",
+        "phoneDark": "#371980",
       },
       fontFamily: {
         head: "Impact",
