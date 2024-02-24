@@ -37,7 +37,7 @@ const Header = () => {
                     </li>
                     <li className='p-4 border-b border-gray-600'>PalceHolder</li>
                     <li className='p-4 border-b border-gray-600'>About</li>
-                    <li className=''><Switcher /></li>
+                    <li className='p-4'><Switcher /></li>
                 </ul>
             </div>
         </div>

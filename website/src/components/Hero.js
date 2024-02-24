@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className="flex items-center h-screen" >
+        <div className=" items-center h-screen" >
             <div className='text-custom-dark dark:text-white '>
-                <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
+                <div className='max-w-[800px] mt-[-42px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
                     <motion.p
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
