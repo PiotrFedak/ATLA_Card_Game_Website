@@ -16,7 +16,10 @@ const Header = () => {
             <div className='flex justify-between items-center h-28 max-w-[1240px] mx-auto px-4 text-custom-dark dark:text-white'>
                 <h1 className='w-full text-5xl font-bold text-[#FF5C00]'>ATLA.</h1>
                 <ul className='hidden md:flex h-14'>
-                    <li className='p-4 '>Home</li>
+
+                    <li className='p-4 '>
+                        <Link to="/">Home</Link>
+                    </li>
                     <li className='p-4'>
                         <Link to="/Stats">Stats</Link>
                     </li>

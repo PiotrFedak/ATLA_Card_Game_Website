@@ -4,6 +4,7 @@ import Header from "../components/header";
 import Hero from "../components/Hero";
 import Img from "../components/img";
 import About from "../components/About";
+import PlayNow from "../components/PlayNow";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Header />
       <Hero />
       <Img />
+      <PlayNow />
       <About />
       <Footer />
     </div>
