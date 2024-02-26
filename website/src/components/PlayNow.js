@@ -14,7 +14,6 @@ const PlayNow = () => {
                         A fascinating journey awaits you through lands inspired by the cult series,
                         where each board is a world known from the screen, and each action card contains possibilities.
                     </p>
-                    <button className='bg-black text-[#FF5C00] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</button>
                 </div>
             </div>
         </div>

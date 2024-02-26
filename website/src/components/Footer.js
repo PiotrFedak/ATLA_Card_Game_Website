@@ -7,6 +7,7 @@ import {
     FaTwitterSquare,
     FaArrowUp,
 } from 'react-icons/fa';
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Footer = () => {
     const [showButton, setShowButton] = useState(false);
@@ -88,7 +89,7 @@ const Footer = () => {
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#8c76da] p-6 rounded-md w-11/12 md:w-2/3 lg:w-2/6 h-5/6"
                 overlayClassName="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50"
             >
-                <button className="absolute top-4 right-4" onClick={closeModal}>X</button>
+                <IoMdCloseCircle size={32} className="absolute top-4 right-4 text-red-600" onClick={closeModal} />
                 <h2 className='text-phoneDark dark:text-phone mt-1 mb-6'>Terms of Service</h2>
                 <p className='text-custom-dark dark:text-white'>MIT License<br></br>
                     Copyright (c) 2024 ATLA Card Game<br></br>

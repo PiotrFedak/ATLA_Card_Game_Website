@@ -5,6 +5,8 @@ import Hero from "../components/Hero";
 import Img from "../components/img";
 import About from "../components/About";
 import PlayNow from "../components/PlayNow";
+import Newsletter from "../components/Newsletter";
+import Characters from "../components/Characters";
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
       <Img />
       <PlayNow />
       <About />
+      <Characters />
+      <Newsletter />
       <Footer />
     </div>
   );
