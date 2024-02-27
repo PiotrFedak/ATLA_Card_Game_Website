@@ -6,7 +6,7 @@ import Img from "../components/img";
 import About from "../components/About";
 import PlayNow from "../components/PlayNow";
 import Newsletter from "../components/Newsletter";
-import Characters from "../components/Characters";
+import Carousel from "../components/Carousel";
 
 const Home = () => {
   return (
@@ -16,7 +16,7 @@ const Home = () => {
       <Img />
       <PlayNow />
       <About />
-      <Characters />
+      <Carousel />
       <Newsletter />
       <Footer />
     </div>

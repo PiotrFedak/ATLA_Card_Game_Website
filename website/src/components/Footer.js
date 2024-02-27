@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import {
-    FaFacebookSquare,
-    FaGithubSquare,
-    FaInstagram,
-    FaTwitterSquare,
-    FaArrowUp,
-} from 'react-icons/fa';
+import { FaFacebookSquare, FaGithubSquare, FaInstagram, FaTwitterSquare, FaArrowUp, } from 'react-icons/fa';
 import { IoMdCloseCircle } from "react-icons/io";
 
 const Footer = () => {
@@ -71,8 +65,9 @@ const Footer = () => {
                     <h6 className='font-medium text-phoneDark dark:text-phone'>Legal</h6>
                     <ul>
                         <li className='py-2 text-sm'><a href="#" onClick={openModal} className="hover:bg-[#FF5C00] rounded">Terms of service</a></li>
-                        <li className='py-2 text-sm'>Privacy Policy</li>
+                        <li className='py-2 text-sm'><a href="#" onClick={openModal} className="hover:bg-[#FF5C00] rounded">Privacy Policy</a></li>
                     </ul>
+
                 </div>
             </div>
             {showButton && (

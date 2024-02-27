@@ -23,7 +23,7 @@ const Header = () => {
                     <li className='p-4'>
                         <Link to="/Stats">Stats</Link>
                     </li>
-                    <li className='p-4'>PalceHolder</li>
+                    <li className='p-4'>Characters</li>
                     <li className='p-4'>About</li>
                     <div className="p-4">
                         <Switcher />
