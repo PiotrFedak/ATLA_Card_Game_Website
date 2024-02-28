@@ -12,7 +12,7 @@ const About = () => {
                 <div>
                     <h1 className='py-4 text-5xl'>Elements </h1>
                     <p className='py-4 text-2xl'>
-                        There is 4 diffrent elemental styles to choose from
+                        There is 4 different elemental styles to choose from
                     </p>
 
                     <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-4'>

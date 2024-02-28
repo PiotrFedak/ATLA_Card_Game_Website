@@ -8,8 +8,8 @@ const PlayNow = () => {
                 <img className='w-[500px] mx-auto my-4' src={map} alt='/' />
                 <div className='flex flex-col justify-center'>
                     <p className='text-[#FF5C00] font-bold '>PLAY NOW</p>
-                    <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2 text-custom-dark dark:text-white'>Exlore the world of the avatar</h1>
-                    <p className='text-custom-dark dark:text-white'>
+                    <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2 text-custom-dark dark:text-white'>Explore the world of the avatar</h1>
+                    <p className='text-custom-dark dark:text-white font-body'>
                         Immerse yourself in the world of the four elements and choose your side.
                         A fascinating journey awaits you through lands inspired by the cult series,
                         where each board is a world known from the screen, and each action card contains possibilities.

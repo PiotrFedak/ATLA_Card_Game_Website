@@ -14,7 +14,7 @@ const Carousel = () => {
     };
 
     return (
-        <div className='w-full py-[10rem] px-4 bg-white dark:bg-custom-black text-custom-dark dark:text-white relative'>
+        <div id="carousel" className='w-full py-[10rem] px-4 bg-white dark:bg-custom-black text-custom-dark dark:text-white relative'>
             <div className='max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8 relative'>
                 {characters.slice(currentCardIndex, currentCardIndex + 3).map((character, index) => (
                     <div key={index} className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300 border border-oraange`}>
