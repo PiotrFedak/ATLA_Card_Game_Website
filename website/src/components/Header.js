@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Switcher from "../Switcher";
+import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
     const [nav, setNav] = useState(false);
@@ -11,20 +12,18 @@ const Header = () => {
     };
 
     return (
-
-        <div className=" border-b-[2px] border-oraange bg-white dark:bg-custom-black min-h-[114px] max-sm:min-h-[89px] fixed top-0 left-0 w-full z-50 rounded-b-2xl ">
+        <div className="border-b-[2px] border-oraange bg-white dark:bg-custom-black min-h-[114px] max-sm:min-h-[89px] fixed top-0 left-0 w-full z-50 rounded-b-2xl ">
             <div className='flex justify-between items-center h-28 max-w-[1240px] mx-auto px-4 text-custom-dark dark:text-white'>
-                <h1 className='w-full text-5xl font-bold text-[#FF5C00]'>ATLA.</h1>
+                <Link to="/" className='w-full text-5xl font-bold text-[#FF5C00] hover:text-[#FFAA5C] transition-colors duration-300'>ATLA.</Link>
                 <ul className='hidden md:flex h-14'>
-
                     <li className='p-4 '>
-                        <Link to="/">Home</Link>
+                        <Link to="/Auth">Login</Link>
                     </li>
+                    <li className='p-4'><HashLink smooth to="#carousel">Characters</HashLink></li>
                     <li className='p-4'>
                         <Link to="/Stats">Stats</Link>
                     </li>
-                    <li className='p-4'>Characters</li>
-                    <li className='p-4'>About</li>
+                    <li className='p-4'>Someting</li>
                     <div className="p-4">
                         <Switcher />
                     </div>

@@ -3,7 +3,7 @@ import Header from "../components/header";
 
 const Stats = () => {
     return (
-        <div>
+        <div className=''>
             <Header />
             Stats
         </div>

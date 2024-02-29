@@ -31,7 +31,7 @@ const Footer = () => {
     }, []);
 
     return (
-        <div className='max-w-[1240px] border-t-2 mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-custom-dark dark:text-white'>
+        <div className='max-w-[1240px] border-t-2 mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-custom-dark dark:text-white '>
             <div>
                 <h1 className='w-full text-5xl font-bold text-[#FF5C00]'>ATLA.</h1>
                 <p className='py-4'>here there will be something about the game, the creators or copyrights behind it, something like that </p>

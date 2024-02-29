@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className=" items-center h-screen" >
+        <div id="about" className=" items-center h-screen" >
             <div className='text-custom-dark dark:text-white '>
                 <div className='max-w-[800px] mt-[-42px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
                     <motion.p
@@ -29,7 +29,7 @@ const Hero = () => {
                         className='flex justify-center items-center'
                     >
                         <p className='md:text-5xl sm:text-4xl text-xl font-bold py-4'>
-                            Game inside the world of Avatar the last airbender
+                            Game inside the World Of Avatar The Last Airbender
                         </p>
                     </motion.div>
                     <motion.p

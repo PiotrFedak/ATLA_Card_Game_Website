@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import Img from "../components/img";
 import About from "../components/About";
 import PlayNow from "../components/PlayNow";
-import Newsletter from "../components/Newsletter";
+import Email from "../components/Email";
 import Carousel from "../components/Carousel";
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
       <PlayNow />
       <About />
       <Carousel />
-      <Newsletter />
+      <Email />
       <Footer />
     </div>
   );
