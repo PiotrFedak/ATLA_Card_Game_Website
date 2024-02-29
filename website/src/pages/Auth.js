@@ -12,7 +12,7 @@ export default function Auth() {
     }
 
     return (
-        <div className='relative w-full h-screen'>
+        <div className='relative w-full h-screen dark:bg-zinc-900/90'>
             <Header />
             <div
                 className='absolute inset-0 z-0 bg-cover bg-center'

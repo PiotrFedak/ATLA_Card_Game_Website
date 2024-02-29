@@ -2,25 +2,25 @@ import React from 'react';
 
 const Register = ({ toggleForm }) => {
     return (
-        <form className='max-w-[400px] w-full mx-auto bg-white dark:bg-gray-800 p-8 rounded-3xl'>
+        <form className='max-w-[400px] w-full mx-auto bg-white dark:bg-gray-800 p-8 rounded-3xl dark:text-white'>
             <h2 className='text-4xl font-bold text-center py-4'>ATLA.</h2>
             <div className='flex justify-between py-8'>
             </div>
-            <div className='flex flex-col mb-4'>
+            <div className='flex flex-col mb-4 '>
                 <label>Username</label>
-                <input className='border relative bg-gray-100 p-2' type="text" />
+                <input className='border relative dark:text-black bg-gray-100 p-2' type="text" />
             </div>
             <div className='flex flex-col mb-4'>
                 <label>Email</label>
-                <input className='border relative bg-gray-100 p-2' type="email" />
+                <input className='border relative dark:text-black bg-gray-100 p-2' type="email" />
             </div>
             <div className='flex flex-col mb-4'>
                 <label>Password</label>
-                <input className='border relative bg-gray-100 p-2' type="password" />
+                <input className='border relative dark:text-black bg-gray-100 p-2' type="password" />
             </div>
             <div className='flex flex-col mb-4'>
                 <label>Confirm Password</label>
-                <input className='border relative bg-gray-100 p-2' type="password" />
+                <input className='border relative dark:text-black bg-gray-100 p-2' type="password" />
             </div>
             <button className='w-full py-3 mt-8 bg-oraange hover:bg-orange-800 relative text-white'>Sign Up</button>
             <p className='flex items-center mt-2'><input className='mr-2' type="checkbox" />Remember Me</p>
