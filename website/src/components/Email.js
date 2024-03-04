@@ -2,28 +2,47 @@ import React from 'react';
 
 const Email = () => {
     return (
-        <div className='w-full py-16 text-custom-dark dark:text-white px-4 font-body'>
-            <div className='max-w-[1240px] mx-auto grid lg:grid-cols-3'>
-                <div className='lg:col-span-2 my-4'>
-                    <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>
-                        Want to check out our latest changes in game?
-                    </h1>
-                    <p>Sign up to our newsletter and stay up to date.</p>
-                </div>
-                <div className='my-4'>
-                    <div className='flex flex-col sm:flex-row items-center justify-between w-full'>
-                        <input
-                            className='p-3 flex w-full rounded-md dark:bg-white bg-gray-300 text-slate-950'
-                            type='email'
-                            placeholder='Enter Email'
-                        />
-                        <button className='bg-[#FF5C00] rounded-md font-medium w-[200px] ml-4 my-6 px-6 py-3'>
-                            Notify Me
+        <section className="h-screen flex justify-center items-center text-custom-dark dark:text-white font-body ">
+            <div className='container max-w-[1240px]'>
+                <h2 className='text-center mb-6 md:text-5xl sm:text-4xl text-3xl font-bold py-2'>Contact us</h2>
+                <form className='flex flex-col gap-4 justify-between w-full p-3 shadow-sm sm:text-xl md:text-2xl'>
+
+                    <div>
+                        <label for="subject" class="block font-medium text-gray-900 dark:text-gray-300">Name</label>
+                        <input type='text'
+                            className='block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+                            placeholder='Full Name'
+                            name='user_name' required />
+                    </div>
+                    <div>
+                        <label for="email" class="block font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                        <input type='email'
+                            className='block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+                            placeholder='Email@gmail.com'
+                            name='user_email' required />
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block font-medium text-gray-900 dark:text-gray-300">Subject</label>
+                        <input type='text'
+                            className='border p-2 border-gray-300 block w-full  text-gray-900 bg-gray-50 rounded-lgshadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+                            placeholder='Let us know what is the problem'
+                            name='subject' required />
+                    </div>
+
+                    <textarea name='message' cols='30'
+                        rows='10'
+                        placeholder='Message'
+                        className="block p-2.5 mt-4 text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    </textarea>
+                    <div className='flex justify-center items-center pt-1'>
+                        <button type='submit' className='bg-[#FF5C00] text-white py-2 px-4 rounded-lg w-[280px]  transform hover:scale-105 transition-all duration-300'>
+                            Send Message
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
-        </div>
+        </section>
     );
 };
 

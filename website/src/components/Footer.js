@@ -72,7 +72,7 @@ const Footer = () => {
             </div>
             {showButton && (
                 <button
-                    className='fixed bottom-8 right-8 bg-[#FF5C00] text-white p-4 rounded-full shadow-lg focus:outline-none'
+                    className='fixed bottom-8 right-8 bg-[#FF5C00] text-white p-4 rounded-full shadow-lg focus:outline-none hover:scale-110 transition-all'
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                     <FaArrowUp size={24} />

@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <div className="border-b-[2px] border-oraange bg-white dark:bg-custom-black min-h-[114px] max-sm:min-h-[89px] fixed top-0 left-0 w-full z-50 rounded-b-2xl ">
             <div className='flex justify-between items-center h-28 max-w-[1240px] mx-auto px-4 text-custom-dark dark:text-white'>
-                <Link to="/" className='w-full text-5xl font-bold text-[#FF5C00] hover:text-[#FFAA5C] transition-colors duration-300'>ATLA.</Link>
+                <Link to="/" className='w-full text-5xl font-bold text-[#FF5C00] hover:scale-105 transition-all duration-300'>ATLA.</Link>
                 <ul className='hidden md:flex h-14'>
                     <li className='p-4 '>
                         <Link to="/Auth">Login</Link>
