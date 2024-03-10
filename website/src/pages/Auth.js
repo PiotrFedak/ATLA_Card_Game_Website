@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/header';
+import Header from '../components/Header';
 import Login from '../components/login';
 import Register from '../components/register';
 import backgroundImage from '../img/background.jpg';

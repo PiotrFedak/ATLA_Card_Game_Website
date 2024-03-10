@@ -1,23 +1,36 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Home from "./pages/Home";
 import Stats from "./pages/Stats";
 import Auth from "./pages/Auth";
+import DefaultLayout from './components/DefaultLayout';
+import GuestLayout from './components/GuestLayout';
 
 const router = createBrowserRouter([
-
   {
-    path: "/",
+    path: '/',
     element: <Home />,
   },
   {
-    path: "/Stats",
-    element: <Stats />,
+    path: '/',
+    element: <DefaultLayout />,
+    children: [
+      {
+        path: '/Stats',
+        element: <Stats />,
+      },
+    ],
   },
   {
-    path: "/Auth",
-    element: <Auth />,
-  },
+    path: '/',
+    element: <GuestLayout />,
+    children: [
+      {
+        path: '/Auth',
+        element: <Auth />,
+      },
+    ],
+  }
 ]);
 
 export default router;
