@@ -5,6 +5,7 @@ import Stats from "./pages/Stats";
 import Auth from "./pages/Auth";
 import DefaultLayout from './components/DefaultLayout';
 import GuestLayout from './components/GuestLayout';
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/Stats',
         element: <Stats />,
+      },
+      {
+        path: '/Profile',
+        element: <Profile />,
       },
     ],
   },

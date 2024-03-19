@@ -16,14 +16,15 @@ const Header = () => {
             <div className='flex justify-between items-center h-28 max-w-[1240px] mx-auto px-4 text-custom-dark dark:text-white'>
                 <Link to="/" className='w-full text-5xl font-bold text-[#FF5C00] hover:scale-105 transition-all duration-300'>ATLA.</Link>
                 <ul className='hidden md:flex h-14'>
-                    <li className='p-4 '>
+                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-2xl'>
                         <Link to="/Auth">Login</Link>
                     </li>
-                    <li className='p-4'><HashLink smooth to="#carousel">Characters</HashLink></li>
-                    <li className='p-4'>
+                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-2xl'>
+                        <HashLink smooth to="#carousel">Characters</HashLink></li>
+                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-2xl'>
                         <Link to="/Stats">Stats</Link>
                     </li>
-                    <li className='p-4'>Someting</li>
+                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-2xl'>Someting</li>
                     <div className="p-4">
                         <Switcher />
                     </div>
