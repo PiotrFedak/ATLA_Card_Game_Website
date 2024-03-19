@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutCard = (props) => {
     return (
-        <div className='flex flex-col border border-oraange text-left rounded-2xl py-12 px-8 hover:transform hover:scale-105 transition-transform duration-300'>
+        <div className='flex flex-col border border-oraange text-left rounded-2xl py-12 px-8 hover:transform hover:scale-110 transition-transform duration-300'>
             <div>
                 <div className='bg-[#e6dfee] inline-flex  rounded-full'>
                     {props.icon}
