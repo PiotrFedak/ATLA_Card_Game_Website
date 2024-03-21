@@ -41,7 +41,7 @@ const UserProfile = () => {
                     <div className="flex items-center">
                         <TbHelpHexagon className="text-4xl ml-2 cursor-pointer hover:text-oraange" onClick={toggleHelpText} />
                         {helpText && (
-                            <span className="ml-2 dark:text-white">{helpText}</span>
+                            <span className="ml-2 dark:text-white text-lg">{helpText}</span>
                         )}
                     </div>
                     <button className="text-4xl hover:text-oraange" onClick={handleEdit}>
