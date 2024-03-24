@@ -61,7 +61,7 @@ const UserProfile = () => {
                         )}
                     </div>
                 </div>
-                <div className="mt-20 w-fit mx-auto">
+                <div className="mt-10 w-fit mx-auto xl:mt-20 lg:mt-5 md:mt-0">
                     {isEditing ? (
                         <>
                             <div className="w-full mb-4">
@@ -92,7 +92,7 @@ const UserProfile = () => {
                             </div>
                             <button
                                 onClick={handleSave}
-                                className="mt-6 bg-oraange text-white px-4 py-2 rounded-md hover:scale-105"
+                                className="mt-6 bg-oraange text-white px-4 py-2 rounded-md hover:scale-105 sm:mt-0"
                             >
                                 Save
                             </button>
