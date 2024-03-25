@@ -1,26 +1,31 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useRef } from 'react';
+import axiosClient from '../axiosClient';
 
 const Register = ({ toggleForm }) => {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const nameRef = useRef();
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const passwordConfirmationRef = useRef();
+
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8000/register', {
-                username,
-                email,
-                password,
-                confirmPassword
+        const payload = {
+            name: nameRef.current.value,
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+            password_confirmation: passwordConfirmationRef.current.value,
+        };
+
+        axiosClient.post('/register', payload)
+            .then(({ data }) => {
+                console.log(data);
+            })
+            .catch((err) => {
+                console.error(err);
             });
-            console.log(response.data);
-        } catch (error) {
-            console.error('Error during registration:', error.response.data);
-        }
     };
+
 
     return (
         <form onSubmit={handleRegister} className='max-w-[400px] w-full mx-auto bg-white dark:bg-gray-800 p-8 rounded-3xl dark:text-white'>
@@ -32,8 +37,8 @@ const Register = ({ toggleForm }) => {
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
                     type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    ref={nameRef}
+                    required
                 />
             </div>
             <div className='flex flex-col mb-4'>
@@ -41,8 +46,8 @@ const Register = ({ toggleForm }) => {
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
                     type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    ref={emailRef}
+                    required
                 />
             </div>
             <div className='flex flex-col mb-4'>
@@ -50,8 +55,8 @@ const Register = ({ toggleForm }) => {
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
                     type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    ref={passwordRef}
+                    required
                 />
             </div>
             <div className='flex flex-col mb-4'>
@@ -59,8 +64,8 @@ const Register = ({ toggleForm }) => {
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
                     type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    ref={passwordConfirmationRef}
+                    required
                 />
             </div>
             <button type="submit" className='w-full py-3 mt-8 bg-oraange hover:bg-orange-800 relative text-white'>Sign Up</button>
@@ -68,6 +73,6 @@ const Register = ({ toggleForm }) => {
             <p className='text-center mt-8'>Already have an account? <button className="text-custom-brown font-semibold bg-transparent border-none" onClick={toggleForm}>Sign in here</button></p>
         </form>
     );
-}
+};
 
 export default Register;
