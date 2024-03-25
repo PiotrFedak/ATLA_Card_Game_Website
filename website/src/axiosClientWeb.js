@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-const axiosClient = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL
-});
+const axiosClientWeb = axios.create({
+    baseURL: 'http://127.0.0.1:8000'
+})
 
-axiosClient.interceptors.request.use((config) => {
+axiosClientWeb.interceptors.request.use((config) => {
     const token = localStorage.getItem('ACCESS_TOKEN')
     config.headers.Authorization = `Bearer ${token}`
     console.log(token);
@@ -13,7 +13,7 @@ axiosClient.interceptors.request.use((config) => {
     return config;
 
 })
-axiosClient.interceptors.response.use((response) => {
+axiosClientWeb.interceptors.response.use((response) => {
     return response;
 }, (error) => {
 
@@ -25,4 +25,4 @@ axiosClient.interceptors.response.use((response) => {
     throw error;
 })
 
-export default axiosClient;
+export default axiosClientWeb;
