@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import axiosClient from '../axiosClient';
+import PropTypes from 'prop-types';
 
 const Register = ({ toggleForm }) => {
     const nameRef = useRef();
@@ -73,6 +74,10 @@ const Register = ({ toggleForm }) => {
             <p className='text-center mt-8'>Already have an account? <button className="text-custom-brown font-semibold bg-transparent border-none" onClick={toggleForm}>Sign in here</button></p>
         </form>
     );
+};
+
+Register.propTypes = {
+    toggleForm: PropTypes.func.isRequired,
 };
 
 export default Register;

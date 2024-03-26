@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Email = () => {
-    const form = useRef()
+    const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -18,13 +18,13 @@ const Email = () => {
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
-                },
+                }
             );
-        e.target.reset()
+        e.target.reset();
     };
 
     return (
-        <section className="h-screen flex justify-center items-center text-custom-dark dark:text-white font-body ">
+        <section className="h-screen flex justify-center items-center text-custom-dark dark:text-white font-body">
             <div className='container max-w-[1240px]'>
                 <h2 className='text-center mb-6 md:text-5xl sm:text-4xl text-3xl font-bold py-2'>Contact us</h2>
                 <form
@@ -33,14 +33,14 @@ const Email = () => {
                     className='flex flex-col gap-4 justify-between w-full p-3 shadow-sm sm:text-xl md:text-2xl'>
 
                     <div>
-                        <label for="subject" class="block font-medium text-gray-900 dark:text-gray-300">Name</label>
+                        <label htmlFor="subject" className="block font-medium text-gray-900 dark:text-gray-300">Name</label>
                         <input type='text'
                             className='block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
                             placeholder='Full Name'
                             name='user_name' required />
                     </div>
                     <div>
-                        <label for="email" class="block font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                        <label htmlFor="email" className="block font-medium text-gray-900 dark:text-gray-300">Your email</label>
                         <input type='email'
                             className='block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
                             placeholder='Email@gmail.com'
@@ -48,9 +48,9 @@ const Email = () => {
                     </div>
 
                     <div>
-                        <label for="subject" class="block font-medium text-gray-900 dark:text-gray-300">Subject</label>
+                        <label htmlFor="subject" className="block font-medium text-gray-900 dark:text-gray-300">Subject</label>
                         <input type='text'
-                            className='border p-2 border-gray-300 block w-full  text-gray-900 bg-gray-50 rounded-lgshadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+                            className='border p-2 border-gray-300 block w-full  text-gray-900 bg-gray-50 rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
                             placeholder='Let us know what is the problem'
                             name='subject' required />
                     </div>

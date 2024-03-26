@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const AboutCard = (props) => {
     return (
@@ -13,7 +14,13 @@ const AboutCard = (props) => {
                 </p>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default AboutCard
+AboutCard.propTypes = {
+    icon: PropTypes.node.isRequired,
+    heading: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+};
+
+export default AboutCard;
