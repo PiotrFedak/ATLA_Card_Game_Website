@@ -15,7 +15,5 @@
       "version": "detect"
     }
   },
-  "rules": {
-    "no-undef": "off" //This should be removed
-  }
+  "rules": {}
 }

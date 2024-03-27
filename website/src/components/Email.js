@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRef } from 'react';
+import config from './config';
 import emailjs from '@emailjs/browser';
 
 const Email = () => {
@@ -8,10 +9,10 @@ const Email = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        const { serviceId, templateId, userId } = config.emailjs;
+
         emailjs
-            .sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, {
-                publicKey: process.env.REACT_APP_EMAILJS_USER_ID,
-            })
+            .sendForm(serviceId, templateId, form.current, { publicKey: userId })
             .then(
                 () => {
                     console.log('SUCCESS!');
@@ -22,6 +23,7 @@ const Email = () => {
             );
         e.target.reset();
     };
+
 
     return (
         <section className="h-screen flex justify-center items-center text-custom-dark dark:text-white font-body">
