@@ -1,0 +1,169 @@
+{
+  "version": "2.1.0",
+  "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.5",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "ESLint",
+          "informationUri": "https://eslint.org",
+          "rules": [],
+          "version": "8.57.0"
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/Switcher.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/axiosClient.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/axiosClientWeb.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/About.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/AboutCard.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/Carousel.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/DefaultLayout.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/Email.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/Footer.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/GuestLayout.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/Header.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/Hero.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/PlayNow.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/UserProfile.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/charactersData.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/config.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/img.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/login.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/components/register.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/contexts/ContextProvider.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/index.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/pages/Auth.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/pages/Home.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/pages/Profile.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/pages/Stats.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/reportWebVitals.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/router.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/setupTests.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/tests/Hero.test.js"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/laragon/www/ATLA_Card_Game-Website/src/useDarkSide.js"
+          }
+        }
+      ],
+      "results": []
+    }
+  ]
+}

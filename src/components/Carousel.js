@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { characters } from './CharactersData';
+import { characters } from './charactersData';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const Carousel = () => {
