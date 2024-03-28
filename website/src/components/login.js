@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { AiFillFacebook } from 'react-icons/ai';
 import axiosClient from '../axiosClient';
+import PropTypes from 'prop-types';
 
 const Login = ({ toggleForm }) => {
     const emailRef = useRef();
@@ -45,6 +46,10 @@ const Login = ({ toggleForm }) => {
             </p>
         </form>
     );
+};
+
+Login.propTypes = {
+    toggleForm: PropTypes.func.isRequired,
 };
 
 export default Login;

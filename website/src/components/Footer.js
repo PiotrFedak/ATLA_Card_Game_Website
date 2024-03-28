@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import { FaFacebookSquare, FaGithubSquare, FaInstagram, FaTwitterSquare, FaArrowUp, } from 'react-icons/fa';
+import { FaFacebookSquare, FaGithubSquare, FaInstagram, FaTwitterSquare, FaArrowUp } from 'react-icons/fa';
 import { IoMdCloseCircle } from "react-icons/io";
 
 const Footer = () => {
@@ -89,14 +90,14 @@ const Footer = () => {
                 <p className='text-custom-dark dark:text-white'>MIT License<br></br>
                     Copyright (c) 2024 ATLA Card Game<br></br>
                     Permission is hereby granted, free of charge, to any person obtaining a copy
-                    of this software and associated documentation files (the "Software"), to deal
+                    of this software and associated documentation files (the &quot;Software&quot;), to deal
                     in the Software without restriction, including without limitation the rights
                     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
                     copies of the Software, and to permit persons to whom the Software is
-                    furnished to do so, subject to the following conditions:
+                    furnished to do so, subject to the following conditions:<br></br>
                     The above copyright notice and this permission notice shall be included in all
-                    copies or substantial portions of the Software. <br></br>
-                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                    copies or substantial portions of the Software.<br></br>
+                    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
                     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
                     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
                     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
