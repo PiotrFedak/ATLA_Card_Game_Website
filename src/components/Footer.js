@@ -35,7 +35,7 @@ const Footer = () => {
         <div className='max-w-[1240px] border-t-2 mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-custom-dark dark:text-white '>
             <div>
                 <h1 className='w-full text-5xl font-bold text-[#FF5C00]'>ATLA.</h1>
-                <p className='py-4'>here there will be something about the game, the creators or copyrights behind it, something like that </p>
+                <p className='py-4'>A student project aimed at creating a card game, in the world of avatar the last airbender</p>
                 <div className='flex justify-between md:w-[75%] my-6'>
                     <FaFacebookSquare size={30} />
                     <FaInstagram size={30} />

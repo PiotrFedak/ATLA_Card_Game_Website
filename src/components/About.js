@@ -11,7 +11,7 @@ const About = () => {
             <div className='max-w-[1340px] mx-auto px-4 py-2 '>
                 <div>
                     <h1 className='py-4 text-5xl'>Elements </h1>
-                    <p className='py-4 text-2xl'>
+                    <p id="Elements" className='py-4 text-2xl'>
                         There is 4 different elemental styles to choose from
                     </p>
 

@@ -28,7 +28,7 @@ const Email = () => {
     return (
         <section className="h-screen flex justify-center items-center text-custom-dark dark:text-white font-body">
             <div className='container max-w-[1240px]'>
-                <h2 className='text-center mb-6 md:text-5xl sm:text-4xl text-3xl font-bold py-2'>Contact us</h2>
+                <h2 id="Contact" className='text-center mb-6 md:text-5xl sm:text-4xl text-3xl font-bold py-2'>Contact us</h2>
                 <form
                     ref={form}
                     onSubmit={sendEmail}
@@ -68,6 +68,7 @@ const Email = () => {
                         </button>
                     </div>
                 </form>
+
             </div>
         </section>
     );
