@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Switcher from "../Switcher";
-import { HashLink } from 'react-router-hash-link';
 
-const Header = () => {
+const Navbar = () => {
     const [nav, setNav] = useState(false);
 
     const handleNav = () => {
@@ -17,14 +16,13 @@ const Header = () => {
                 <Link to="/" className='w-full text-5xl font-bold text-[#FF5C00] hover:scale-105 transition-all duration-300'>ATLA.</Link>
                 <ul className='hidden md:flex h-14'>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
-                        <Link to="/Auth">Login</Link>
+                        <Link to="/Profile">Profile</Link>
                     </li>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
-                        <HashLink smooth to="#carousel">Characters</HashLink></li>
+                        <Link to="/Stats">Stats</Link>
+                    </li>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
-                        <HashLink smooth to="#Elements">Elements</HashLink></li>
-                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
-                        <HashLink smooth to="#Contact">Contact</HashLink></li>
+                        <Link to="/">Home</Link></li>
                     <div className="p-4">
                         <Switcher />
                     </div>
@@ -35,16 +33,13 @@ const Header = () => {
                 <ul className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900  bg-hamburger dark:bg-nav-black ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}>
                     <h1 className='w-full text-3xl font-bold text-[#FF5C00] m-4'>ATLA.</h1>
                     <li className='p-4 border-b border-gray-600'>
-                        <Link to="/Auth">Login</Link>
+                        <Link to="/Profile">Profile</Link>
                     </li>
                     <li className='p-4 border-b border-gray-600'>
-                        <HashLink smooth to="#carousel">Characters</HashLink>
+                        <Link to="/Stats">Stats</Link>
                     </li>
                     <li className='p-4 border-b border-gray-600'>
-                        <HashLink smooth to="#Elements">Elements</HashLink>
-                    </li>
-                    <li className='p-4 border-b border-gray-600'>
-                        <HashLink smooth to="#Contact">Contact</HashLink>
+                        <Link to="/">Home</Link>
                     </li>
                     <li className='p-4'><Switcher /></li>
                 </ul>
@@ -53,4 +48,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
-import Login from '../components/login';
-import Register from '../components/register';
+import Login from '../components/Login';
+import Register from '../components/Register';
 import backgroundImage from '../img/background.jpg';
 
 export default function Auth() {
