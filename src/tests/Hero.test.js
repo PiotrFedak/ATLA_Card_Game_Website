@@ -7,8 +7,8 @@ describe('Hero component', () => {
         const { getByText } = render(<Hero />);
 
         expect(getByText('ATLA CARD GAME.')).toBeInTheDocument();
+        expect(getByText('Are you tired of Hearthstone?')).toBeInTheDocument();
 
-        expect(getByText('Get Started')).toBeInTheDocument();
     });
 
 });
