@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { FaGear, } from 'react-icons/fa6';
 import { FaUserCircle, } from 'react-icons/fa';
 import { TbHelpHexagon } from "react-icons/tb";
+import P1 from '../img/P1.jpg';
+import P2 from '../img/P2.jpg';
+import P3 from '../img/P3.jpg';
+import P7 from '../img/P7.jpg';
+import P5 from '../img/P5.jpg';
+import P6 from '../img/P6.jpg';
 
 const UserProfile = () => {
     const [username, setUsername] = useState("Username");
@@ -23,23 +29,16 @@ const UserProfile = () => {
         setHelpText(helpText ? "" : "click on the gear to edit your profile settings like Username, Password or set up new profile img");
     };
 
-    const handleAvatarChange = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setAvatar(reader.result);
-        };
-        if (file) {
-            reader.readAsDataURL(file);
-        }
+    const handleAvatarSelect = (avatarName) => {
+        setAvatar(avatarName);
     };
 
     return (
-        <div className="w-3/4 h-3/4 dark:bg-[#20354b] bg-slate-300 rounded-2xl px-8 py-10 shadow-lg mt-14 absolute">
-            <section className="w-full mx-auto px-8 py-6">
+        <div className="w-3/4 h-3/4 dark:bg-[#20354b] bg-slate-300 rounded-2xl px-8 shadow-lg mt-16">
+            <section className="w-full mx-auto py-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                        <TbHelpHexagon className="text-4xl ml-2 cursor-pointer hover:text-oraange" onClick={toggleHelpText} />
+                        <TbHelpHexagon className="text-4xl cursor-pointer hover:text-oraange" onClick={toggleHelpText} />
                         {helpText && (
                             <span className="ml-2 dark:text-white text-lg">{helpText}</span>
                         )}
@@ -48,8 +47,8 @@ const UserProfile = () => {
                         <FaGear />
                     </button>
                 </div>
-                <div className="mt-6 w-fit mx-auto">
-                    <div className="rounded-full overflow-hidden w-48 h-48  bg-gray-200">
+                <div className="w-fit mx-auto">
+                    <div className="relative rounded-full overflow-hidden w-52 h-52 bg-gray-200">
                         {avatar ? (
                             <img
                                 src={avatar}
@@ -57,14 +56,57 @@ const UserProfile = () => {
                                 className="rounded-full w-full h-auto"
                             />
                         ) : (
-                            <FaUserCircle className="w-48 h-48 rounded-full text-gray-500" />
+                            <FaUserCircle className="w-52 h-52 rounded-full text-gray-500" />
+                        )}
+                        {avatar && (
+                            <div className="absolute top-0 left-0 w-full h-full"></div>
                         )}
                     </div>
                 </div>
-                <div className="mt-10 w-fit mx-auto xl:mt-20 lg:mt-5 md:mt-0">
+                <div className="mt-10 w-fit mx-auto xl:mt-2 lg:mt-2 md:mt-0">
                     {isEditing ? (
                         <>
-                            <div className="w-full mb-4">
+                            <label className='block font-bold text-lg text-left'>Profile Pictures:</label>
+                            <div className="flex justify-items-center space-x-6">
+                                <img
+                                    src={P1}
+                                    alt="Avatar 1"
+                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P1 ? 'border-2 border-oraange' : ''}`}
+                                    onClick={() => handleAvatarSelect(P1)}
+                                />
+                                <img
+                                    src={P2}
+                                    alt="Avatar 2"
+                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P2 ? 'border-2 border-oraange' : ''}`}
+                                    onClick={() => handleAvatarSelect(P2)}
+                                />
+                                <img
+                                    src={P3}
+                                    alt="Avatar 3"
+                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P3 ? 'border-2 border-oraange' : ''}`}
+                                    onClick={() => handleAvatarSelect(P3)}
+                                />
+                                <img
+                                    src={P7}
+                                    alt="Avatar 4"
+                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P7 ? 'border-2 border-oraange' : ''}`}
+                                    onClick={() => handleAvatarSelect(P7)}
+                                />
+                                <img
+                                    src={P5}
+                                    alt="Avatar 5"
+                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P5 ? 'border-2 border-oraange' : ''}`}
+                                    onClick={() => handleAvatarSelect(P5)}
+                                />
+                                <img
+                                    src={P6}
+                                    alt="Avatar 6"
+                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P6 ? 'border-2 border-oraange' : ''}`}
+                                    onClick={() => handleAvatarSelect(P6)}
+                                />
+
+                            </div>
+                            <div className="w-full mb-4 mt-6">
                                 <label htmlFor="username" className="block font-bold text-lg">Username:</label>
                                 <input
                                     type="text"
@@ -96,14 +138,6 @@ const UserProfile = () => {
                             >
                                 Save
                             </button>
-                            <label htmlFor="avatar" className="block font-bold text-lg mt-4">Change Avatar:</label>
-                            <input
-                                type="file"
-                                id="avatar"
-                                accept="image/*"
-                                onChange={handleAvatarChange}
-                                className="mt-1"
-                            />
                         </>
                     ) : (
                         <>
