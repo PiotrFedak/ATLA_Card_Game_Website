@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosClientWeb = axios.create({
-    baseURL: 'http://127.0.0.1:8000'
+    baseURL: 'https://apiatlaphp.cloud/api'
 })
 
 axiosClientWeb.interceptors.request.use((config) => {

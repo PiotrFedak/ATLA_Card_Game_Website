@@ -6,7 +6,7 @@ const Register = ({ toggleForm }) => {
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
-    const passwordConfirmationRef = useRef();
+    // const passwordConfirmationRef = useRef();
 
 
     const handleRegister = async (e) => {
@@ -15,7 +15,7 @@ const Register = ({ toggleForm }) => {
             name: nameRef.current.value,
             email: emailRef.current.value,
             password: passwordRef.current.value,
-            password_confirmation: passwordConfirmationRef.current.value,
+            // password_confirmation: passwordConfirmationRef.current.value,
         };
 
         axiosClient.post('/register', payload)
@@ -60,7 +60,7 @@ const Register = ({ toggleForm }) => {
                     required
                 />
             </div>
-            <div className='flex flex-col mb-4'>
+            {/* <div className='flex flex-col mb-4'>
                 <label>Confirm Password</label>
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
@@ -68,7 +68,7 @@ const Register = ({ toggleForm }) => {
                     ref={passwordConfirmationRef}
                     required
                 />
-            </div>
+            </div> */}
             <button type="submit" className='w-full py-3 mt-8 bg-oraange hover:bg-orange-800 relative text-white'>Sign Up</button>
             <p className='flex items-center mt-2'><input className='mr-2' type="checkbox" />Remember Me</p>
             <p className='text-center mt-8'>Already have an account? <button className="text-custom-brown font-semibold bg-transparent border-none" onClick={toggleForm}>Sign in here</button></p>
