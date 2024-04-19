@@ -122,6 +122,7 @@ const UserProfile = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="mt-1 border border-gray-400 text-custom-black rounded-md px-3 py-1 w-full"
+                                    required
                                 />
                                 <label htmlFor="password" className="block font-bold text-lg mt-4">Password:</label>
                                 <input
@@ -130,6 +131,7 @@ const UserProfile = () => {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     className="mt-1 border border-gray-400 text-custom-black rounded-md px-3 py-1 w-full"
+                                    required
                                 />
                             </div>
                             <button

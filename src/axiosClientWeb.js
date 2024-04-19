@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosClientWeb = axios.create({
-    baseURL: 'https://apiatlaphp.000webhostapp.com/api'
+    baseURL: 'https://apiatlaphp.cloud/api'
 })
 
 axiosClientWeb.interceptors.request.use((config) => {
