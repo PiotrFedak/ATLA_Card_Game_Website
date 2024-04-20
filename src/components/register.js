@@ -1,13 +1,14 @@
 import React, { useRef } from 'react';
 import axiosClient from '../axiosClient';
 import PropTypes from 'prop-types';
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Register = ({ toggleForm }) => {
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     // const passwordConfirmationRef = useRef();
-
+    const { setUser, setToken } = useStateContext();
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -20,7 +21,8 @@ const Register = ({ toggleForm }) => {
 
         axiosClient.post('/register', payload)
             .then(({ data }) => {
-                console.log(data);
+                setUser(data.user);
+                setToken(data.token);
             })
             .catch((err) => {
                 console.error(err);
