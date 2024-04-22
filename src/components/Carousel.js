@@ -30,10 +30,10 @@ const Carousel = () => {
                 ))}
             </div>
             <div className="absolute top-1/2 -translate-y-1/2 left-8">
-                <button className="text-3xl" onClick={goToPreviousCards}><FaArrowLeft /></button>
+                <button id="Left" className="text-3xl" onClick={goToPreviousCards}><FaArrowLeft /></button>
             </div>
             <div className="absolute top-1/2 -translate-y-1/2 right-8">
-                <button className="text-3xl" onClick={goToNextCards}><FaArrowRight /></button>
+                <button id="right" className="text-3xl" onClick={goToNextCards}><FaArrowRight /></button>
             </div>
         </div>
     );
