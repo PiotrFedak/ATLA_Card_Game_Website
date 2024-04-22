@@ -42,6 +42,7 @@ const Hero = () => {
                     </motion.p>
                     <div className="flex justify-center">
                         <motion.a
+                            data-testid='button-test'
                             href="/AtlaTheGame.rar"
                             download
                             initial={{ opacity: 0, y: -20 }}

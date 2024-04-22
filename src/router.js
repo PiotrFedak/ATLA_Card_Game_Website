@@ -3,8 +3,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from "./pages/Home";
 import Stats from "./pages/Stats";
 import Auth from "./pages/Auth";
-import DefaultLayout from './components/DefaultLayout';
-import GuestLayout from './components/GuestLayout';
+import DefaultLayout from './access/DefaultLayout';
+import GuestLayout from './access/GuestLayout';
 import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([

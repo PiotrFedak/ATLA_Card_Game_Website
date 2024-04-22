@@ -3,10 +3,12 @@ import { FcGoogle } from 'react-icons/fc';
 import { AiFillFacebook } from 'react-icons/ai';
 import axiosClient from '../axiosClient';
 import PropTypes from 'prop-types';
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Login = ({ toggleForm }) => {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const { setUser, setToken } = useStateContext();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -17,7 +19,8 @@ const Login = ({ toggleForm }) => {
 
         axiosClient.post('/login', payload)
             .then(({ data }) => {
-                console.log(data);
+                setUser(data.user);
+                setToken(data.token);
             })
             .catch((err) => {
                 console.error(err);
