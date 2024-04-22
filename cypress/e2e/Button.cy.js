@@ -8,6 +8,6 @@ describe('template spec', () => {
     cy.get('[data-testid="button-test"]').should('exist');
 
     cy.get('[data-testid="button-test"]').click();
-
+    cy.get('.hidden > div.p-4').click();
   })
 })

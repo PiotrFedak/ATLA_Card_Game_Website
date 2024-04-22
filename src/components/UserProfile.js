@@ -43,7 +43,7 @@ const UserProfile = () => {
                             <span className="ml-2 dark:text-white text-lg">{helpText}</span>
                         )}
                     </div>
-                    <button className="text-4xl hover:text-oraange" onClick={handleEdit}>
+                    <button id="Gear" className="text-4xl hover:text-oraange" onClick={handleEdit}>
                         <FaGear />
                     </button>
                 </div>
