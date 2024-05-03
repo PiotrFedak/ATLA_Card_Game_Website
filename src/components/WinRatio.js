@@ -24,7 +24,7 @@ const WinRatio = () => {
                     Win Rate
                 </div>
                 <div>
-                    <div className="artboard phone-1 mt-2 py-2 ">
+                    <div id="PieChart" className="artboard phone-1 mt-2 py-2 ">
                         <PieChart data={data} />
                     </div>
                 </div>

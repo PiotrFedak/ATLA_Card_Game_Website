@@ -36,11 +36,11 @@ const Login = ({ toggleForm }) => {
             </div>
             <div className='flex flex-col mb-4 '>
                 <label className=''>Email</label>
-                <input className='border relative bg-gray-100 p-2 dark:text-black' type="email" ref={emailRef} required />
+                <input id="email" className='border relative bg-gray-100 p-2 dark:text-black' type="email" ref={emailRef} required />
             </div>
             <div className='flex flex-col '>
                 <label className=''>Password</label>
-                <input className='border relative bg-gray-100 p-2 dark:text-black' type="password" ref={passwordRef} required />
+                <input id="password" className='border relative bg-gray-100 p-2 dark:text-black' type="password" ref={passwordRef} required />
             </div>
             <button type="submit" className='w-full py-3 mt-8 bg-oraange hover:bg-orange-800 relative text-white'>Sign In</button>
             <p className='flex items-center mt-2 '><input className='mr-2 ' type="checkbox" />Remember Me</p>

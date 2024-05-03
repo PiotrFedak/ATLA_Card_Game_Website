@@ -22,10 +22,14 @@ const UserProfile = () => {
     useEffect(() => {
         const storedName = getCookie("name");
         const storedEmail = getCookie("email");
+        const storedAvatar = getCookie("avatar");
 
         if (storedName && storedEmail) {
             setName(storedName);
             setEmail(storedEmail);
+        }
+        if (storedAvatar) {
+            setAvatar(storedAvatar);
         }
     }, []);
 
@@ -58,7 +62,9 @@ const UserProfile = () => {
 
     const handleAvatarSelect = (avatarName) => {
         setAvatar(avatarName);
+        setCookie("avatar", avatarName, 30);
     };
+
 
     const setCookie = (name, value, days) => {
         const date = new Date();
