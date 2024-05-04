@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaGear, } from 'react-icons/fa6';
 import { FaUserCircle, } from 'react-icons/fa';
 import { TbHelpHexagon } from "react-icons/tb";
+import axiosClient from '../axiosClient';
+import { useEffect } from 'react';
 import P1 from '../img/P1.jpg';
 import P2 from '../img/P2.jpg';
 import P3 from '../img/P3.jpg';
@@ -10,18 +12,47 @@ import P5 from '../img/P5.jpg';
 import P6 from '../img/P6.jpg';
 
 const UserProfile = () => {
-    const [username, setUsername] = useState("Username");
+    const [name, setName] = useState("name");
     const [email, setEmail] = useState("Email");
     const [password, setPassword] = useState("********");
     const [avatar, setAvatar] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [helpText, setHelpText] = useState("");
 
+    useEffect(() => {
+        const storedName = getCookie("name");
+        const storedEmail = getCookie("email");
+        const storedAvatar = getCookie("avatar");
+
+        if (storedName && storedEmail) {
+            setName(storedName);
+            setEmail(storedEmail);
+        }
+        if (storedAvatar) {
+            setAvatar(storedAvatar);
+        }
+    }, []);
+
+
     const handleEdit = () => {
         setIsEditing(!isEditing);
     };
 
-    const handleSave = () => {
+    const handleSave = async (e) => {
+        e.preventDefault();
+        const payload = {
+            name: name,
+            email: email,
+            password: password,
+            avatar: avatar
+        };
+        axiosClient.post('/update', payload)
+            .then(response => {
+                console.log('You changed your profile data:', response.data);
+            })
+            .catch(error => {
+                console.error('error during changing your profile data:', error);
+            });
         setIsEditing(false);
     };
 
@@ -31,7 +62,28 @@ const UserProfile = () => {
 
     const handleAvatarSelect = (avatarName) => {
         setAvatar(avatarName);
+        setCookie("avatar", avatarName, 30);
     };
+
+
+    const setCookie = (name, value, days) => {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    const getCookie = (name) => {
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const cookies = decodedCookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.indexOf(name) === 0) {
+                return cookie.substring(name.length + 1);
+            }
+        }
+        return "";
+    }
 
     return (
         <div className="w-3/4 h-3/4 dark:bg-[#20354b] bg-slate-300 rounded-2xl px-8 shadow-lg mt-16">
@@ -107,21 +159,27 @@ const UserProfile = () => {
 
                             </div>
                             <div className="w-full mb-4 mt-6">
-                                <label htmlFor="username" className="block font-bold text-lg">Username:</label>
+                                <label htmlFor="name" className="block font-bold text-lg">Username:</label>
                                 <input
                                     type="text"
-                                    id="username"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    className="mt-1 border border-gray-400 text-custom-black rounded-md px-3 py-1 w-full"
+                                    id="name"
+                                    value={name}
+                                    onChange={(e) => {
+                                        setName(e.target.value);
+                                        setCookie("name", e.target.value, 30);
+                                    }}
+                                    className="mt-1 border border-gray-400 text-white rounded-md px-3 py-1 w-full"
                                 />
                                 <label htmlFor="email" className="block font-bold text-lg mt-4">Email:</label>
                                 <input
                                     type="email"
                                     id="email"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="mt-1 border border-gray-400 text-custom-black rounded-md px-3 py-1 w-full"
+                                    onChange={(e) => {
+                                        setEmail(e.target.value);
+                                        setCookie("email", e.target.value, 30);
+                                    }}
+                                    className="mt-1 border border-gray-400 text-white rounded-md px-3 py-1 w-full"
                                     required
                                 />
                                 <label htmlFor="password" className="block font-bold text-lg mt-4">Password:</label>
@@ -130,7 +188,7 @@ const UserProfile = () => {
                                     id="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="mt-1 border border-gray-400 text-custom-black rounded-md px-3 py-1 w-full"
+                                    className="mt-1 border border-gray-400 text-white rounded-md px-3 py-1 w-full"
                                     required
                                 />
                             </div>
@@ -143,7 +201,7 @@ const UserProfile = () => {
                         </>
                     ) : (
                         <>
-                            <h2 className="font-bold tracking-wide sm:text-xl md:text-2xl">{username}</h2>
+                            <h2 className="font-bold tracking-wide sm:text-xl md:text-2xl">{name}</h2>
                             <h2 className="font-bold mt-5 w-fit mx-auto sm:text-xl md:text-2xl">{email}</h2>
                         </>
                     )}

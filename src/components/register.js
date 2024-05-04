@@ -40,6 +40,7 @@ const Register = ({ toggleForm }) => {
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
                     type="text"
+                    id="name"
                     ref={nameRef}
                     required
                 />
@@ -49,6 +50,7 @@ const Register = ({ toggleForm }) => {
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
                     type="email"
+                    id="email"
                     ref={emailRef}
                     required
                 />
@@ -58,6 +60,7 @@ const Register = ({ toggleForm }) => {
                 <input
                     className='border relative dark:text-black bg-gray-100 p-2'
                     type="password"
+                    id="password"
                     ref={passwordRef}
                     required
                 />

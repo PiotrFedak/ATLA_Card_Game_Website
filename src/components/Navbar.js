@@ -2,12 +2,24 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Switcher from "../Switcher";
+import { useStateContext } from "../contexts/ContextProvider";
+import axiosClient from "../axiosClient";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
-
+    const { setUser, setToken } = useStateContext();
     const handleNav = () => {
         setNav(!nav);
+    };
+
+    const handleLogout = async () => {
+        axiosClient
+            .post("/logout")
+            .then(() => {
+                setUser({});
+                setToken(null);
+                window.location.reload()
+            });
     };
 
     return (
@@ -22,7 +34,11 @@ const Navbar = () => {
                         <Link to="/Stats">Stats</Link>
                     </li>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
-                        <Link to="/">Home</Link></li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
+                        <button onClick={handleLogout}> Logout </button>
+                    </li>
                     <div className="p-4">
                         <Switcher />
                     </div>
