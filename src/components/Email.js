@@ -2,6 +2,8 @@ import React from 'react';
 import { useRef } from 'react';
 import config from './config';
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Email = () => {
     const form = useRef();
@@ -16,9 +18,11 @@ const Email = () => {
             .then(
                 () => {
                     console.log('SUCCESS!');
+                    toast.success('Email sent successfully!');
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
+                    toast.error('Failed to send email.');
                 }
             );
         e.target.reset();
@@ -27,6 +31,7 @@ const Email = () => {
 
     return (
         <section className="h-screen flex justify-center items-center text-custom-dark dark:text-white font-body">
+            <ToastContainer />
             <div className='container max-w-[1240px]'>
                 <h2 id="Contact" className='text-center mb-6 md:text-5xl sm:text-4xl text-3xl font-bold py-2'>Contact us</h2>
                 <form

@@ -7,6 +7,7 @@ describe("Login Form", () => {
     cy.get("button").contains("Sign In").click();
 
     cy.getCookie("token").should("not.exist");
+    cy.url().should("eq", "http://localhost:3000/Auth");
   });
 
   it("successfully logs in with correct credentials", () => {
@@ -16,6 +17,7 @@ describe("Login Form", () => {
     cy.get("#password").type("123");
     cy.get("button").contains("Sign In").click();
 
+    cy.url().should("not.eq", "http://localhost:3000/Auth");
     cy.url().should("eq", "http://localhost:3000/Stats");
     cy.get("#PieChart").should("exist");
   });
