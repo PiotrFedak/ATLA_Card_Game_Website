@@ -26,13 +26,19 @@ const Carousel = () => {
                             key={index}
                             className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300 border border-oraange`}
                         >
-                            <img className="w-220 mx-auto mt-[-3rem]" src={character.image} alt={character.name} />
+                            <div className="image-container">
+                                <img className="w-220 mx-auto mt-[-3rem] object-contain h-96 w-96" src={character.image} alt={character.name} />
+                            </div>
                             <h2
                                 className={`text-2xl font-bold text-center text-${character.color}-500 py-8`}
                             >
                                 {character.name}
                             </h2>
-                            <p className="text-center text-4xl font-bold">{character.type}</p>
+
+                            <p className={`text-center text-4xl font-bold text-${character.color}-500`}>
+                                {character.type}
+                            </p>
+
                             <div className="text-center font-medium">
                                 {character.abilities.map((ability, index) => (
                                     <p key={index} className="py-2 pt-8 border-b mx-8">
