@@ -12,13 +12,18 @@ const Navbar = () => {
         setNav(!nav);
     };
 
+    const deleteCookie = (name) => {
+        document.cookie = name + '=; Max-Age=-99999999;';
+    };
+
     const handleLogout = async () => {
         axiosClient
             .post("/logout")
             .then(() => {
                 setUser({});
                 setToken(null);
-                window.location.reload()
+                deleteCookie("avatar");
+                window.location.reload();
             });
     };
 

@@ -4,6 +4,7 @@ import { FaUserCircle, } from 'react-icons/fa';
 import { TbHelpHexagon } from "react-icons/tb";
 import axiosClient from '../axiosClient';
 import { useEffect } from 'react';
+import appa from '../img/appa.png';
 import P1 from '../img/P1.jpg';
 import P2 from '../img/P2.jpg';
 import P3 from '../img/P3.jpg';
@@ -12,8 +13,8 @@ import P5 from '../img/P5.jpg';
 import P6 from '../img/P6.jpg';
 
 const UserProfile = () => {
-    const [name, setName] = useState("name");
-    const [email, setEmail] = useState("Email");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("********");
     const [avatar, setAvatar] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
@@ -90,6 +91,11 @@ const UserProfile = () => {
             <section className="w-full mx-auto py-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
+                        <img src={appa} alt="Appa" className="hidden lg:block absolute right-[10em] top-1/2 -translate-y-1/2 -mt-[2em]" />
+                        <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -mt-[2em] w-[8em] overflow-hidden z-10 transform -rotate-180">
+                            <div className="border-[30px] md:border-[36px] border-[#FF5C00] md:h-[46em] md:w-[46em] rounded-full"></div>
+                        </div>
+
                         <TbHelpHexagon className="text-4xl cursor-pointer hover:text-oraange" onClick={toggleHelpText} />
                         {helpText && (
                             <span className="ml-2 dark:text-white text-lg">{helpText}</span>
