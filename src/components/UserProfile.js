@@ -199,6 +199,7 @@ const UserProfile = () => {
                                 />
                             </div>
                             <button
+                                id='saveProfile'
                                 onClick={handleSave}
                                 className="mt-6 bg-oraange text-white px-4 py-2 rounded-md hover:scale-105 sm:mt-0"
                             >
