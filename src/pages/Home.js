@@ -8,6 +8,7 @@ import PlayNow from "../components/PlayNow";
 import Email from "../components/Email";
 import Carousel from "../components/Carousel";
 import Block from "../components/Block";
+import Screens from "../components/Screens";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <PlayNow />
       <About />
       <Carousel />
+      <Screens />
       <Email />
       <Footer />
     </div>

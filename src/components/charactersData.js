@@ -3,7 +3,7 @@ export const characters = [
         name: "Toph",
         image: require("../img/Toph.png"),
         type: "EarthBender",
-        abilities: ["DEF STRUCTURE", "...", "..."],
+        abilities: ["Def structure",],
         color: "green",
         isNew: true,
     },
@@ -11,14 +11,14 @@ export const characters = [
         name: "Azula",
         image: require("../img/azula.png"),
         type: "FireBender",
-        abilities: ["BONUS CRIT CHANCE", "Lighting Attack", "..."],
+        abilities: ["Next attack card is free", "Lighting attack",],
         color: "red",
     },
     {
         name: "kora",
         image: require("../img/kora.png"),
         type: "WaterBender",
-        abilities: ["...", "...", "...."],
+        abilities: ["Shoots 2x ice spikes deals 4dmg",],
         color: "blue",
         isNew: true,
     },
@@ -26,21 +26,21 @@ export const characters = [
         name: "Zuko",
         image: require("../img/Zuko.png"),
         type: "FireBender",
-        abilities: ["...", "...", "...."],
+        abilities: ["Deals powerfull kick 7dmg",],
         color: "red"
     },
     {
         name: "Iroh",
         image: require("../img/Iroh.webp"),
         type: "FireBender",
-        abilities: ["...", "...", "...."],
+        abilities: ["Draw card",],
         color: "red"
     },
     {
         name: "giastsu",
         image: require("../img/giastsu.png"),
         type: "Airbender",
-        abilities: ["...", "...", "...."],
+        abilities: ["Skip enemy turn",],
         color: "gray",
         isNew: true,
     },
@@ -48,21 +48,21 @@ export const characters = [
         name: "Katara",
         image: require("../img/katara.png"),
         type: "WaterBender",
-        abilities: ["HEALS HERSELF EVERY ROUND", "...", "...."],
+        abilities: ["Heals herself 4hp",],
         color: "blue"
     },
     {
         name: "tenzin",
         image: require("../img/tenzin.png"),
         type: "Airbender",
-        abilities: ["...", "...", "...."],
+        abilities: ["Next normal spell will be upgraded into golden",],
         color: "gray"
     },
     {
         name: "bumi",
         image: require("../img/bumi.png"),
         type: "EarthBender",
-        abilities: ["...", "...", "...."],
+        abilities: ["Rock throw",],
         color: "green",
         isNew: true,
     },
@@ -70,21 +70,21 @@ export const characters = [
         name: "kioshi",
         image: require("../img/kioshi.png"),
         type: "EarthBender",
-        abilities: ["...", "...", "...."],
+        abilities: ["Lower enemy defense stats",],
         color: "green"
     },
     {
         name: "Yue",
         image: require("../img/Yue.png"),
         type: "WaterBender",
-        abilities: ["HEALS HERSELF EVERY ROUND", "...", "...."],
+        abilities: ["Skips his own turn",],
         color: "blue"
     },
     {
         name: "Aang",
         image: require("../img/q1.png"),
         type: "Airbender",
-        abilities: ["Dodge", "...", "..."],
+        abilities: ["Regenerates energy", "...", "..."],
         color: "gray"
     }
 ];

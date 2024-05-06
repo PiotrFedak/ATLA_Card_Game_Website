@@ -16,7 +16,7 @@ describe('<Carousel />', () => {
   it('displays character abilities', () => {
     cy.mount(<Carousel />);
     cy.get('#Left').click();
-    cy.contains('Dodge').should('be.visible');
+    cy.contains('Regenerates energy').should('be.visible');
     cy.contains('...').should('be.visible');
     cy.contains('...').should('be.visible');
   });
