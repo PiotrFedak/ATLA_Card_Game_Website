@@ -12,13 +12,19 @@ const Navbar = () => {
         setNav(!nav);
     };
 
+    const deleteCookie = (name) => {
+        document.cookie = name + '=; Max-Age=-99999999;';
+    };
+
     const handleLogout = async () => {
         axiosClient
             .post("/logout")
             .then(() => {
                 setUser({});
                 setToken(null);
-                window.location.reload()
+                deleteCookie("nick");
+                deleteCookie("email");
+                window.location.reload();
             });
     };
 
@@ -27,7 +33,7 @@ const Navbar = () => {
             <div className='flex justify-between items-center h-28 max-w-[1240px] mx-auto px-4 text-custom-dark dark:text-white'>
                 <Link to="/" className='w-full text-5xl font-bold text-[#FF5C00] hover:scale-105 transition-all duration-300'>ATLA.</Link>
                 <ul className='hidden md:flex h-14'>
-                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
+                    <li data-testid='Profile-test' className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
                         <Link to="/Profile">Profile</Link>
                     </li>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>

@@ -7,7 +7,6 @@ const Register = ({ toggleForm }) => {
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
-    // const passwordConfirmationRef = useRef();
     const { setUser, setToken } = useStateContext();
 
     const handleRegister = async (e) => {
@@ -16,13 +15,14 @@ const Register = ({ toggleForm }) => {
             name: nameRef.current.value,
             email: emailRef.current.value,
             password: passwordRef.current.value,
-            // password_confirmation: passwordConfirmationRef.current.value,
         };
 
         axiosClient.post('/register', payload)
             .then(({ data }) => {
                 setUser(data.user);
                 setToken(data.token);
+                const userId = data.user.id;
+                document.cookie = `user_id=${userId}; path=/;`;
             })
             .catch((err) => {
                 console.error(err);
@@ -65,15 +65,6 @@ const Register = ({ toggleForm }) => {
                     required
                 />
             </div>
-            {/* <div className='flex flex-col mb-4'>
-                <label>Confirm Password</label>
-                <input
-                    className='border relative dark:text-black bg-gray-100 p-2'
-                    type="password"
-                    ref={passwordConfirmationRef}
-                    required
-                />
-            </div> */}
             <button type="submit" className='w-full py-3 mt-8 bg-oraange hover:bg-orange-800 relative text-white'>Sign Up</button>
             <p className='flex items-center mt-2'><input className='mr-2' type="checkbox" />Remember Me</p>
             <p className='text-center mt-8'>Already have an account? <button className="text-custom-brown font-semibold bg-transparent border-none" onClick={toggleForm}>Sign in here</button></p>

@@ -40,30 +40,23 @@ const Hero = () => {
                     >
                         Available on both mobile and desktop devices!
                     </motion.p>
-                    <div className="flex justify-center">
-                        <motion.a
-                            data-testid='button-test'
-                            href="/AtlaTheGame.rar"
-                            download
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1.3 }}
-                            className='bg-[#FF5C00] w-[200px] rounded-md font-medium my-6 mx-2 py-3 text-white text-2xl'
-                            style={{ flexGrow: 1 }}
-                        >
-                            Download for Desktop
-                        </motion.a>
-                        <motion.a
-                            href=""
-                            download
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 1.3 }}
-                            className='bg-[#FF5C00] w-[200px] rounded-md font-medium my-6 mx-2 py-3 text-white text-2xl'
-                            style={{ flexGrow: 1 }}
-                        >
-                            Download for Mobile
-                        </motion.a>
+                    <div className="flex justify-center hover:scale-105 duration-300">
+                        <details className="dropdown">
+                            <summary id="Play now" data-testid='button-test' className="m-1 bg-phoneDark dark:bg-[#FF5C00] w-[200px] rounded-md font-medium my-6 mx-2 py-3 text-white text-2xl">Play Now!</summary>
+                            <ul className="p-2 mt-24 shadow menu dropdown-content z-[1] bg-[#FF5C00] dark:bg-phoneDark text-black dark:text-white rounded-box w-64 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                <li>
+                                    <a href="/AtlaTheGame.rar" download>
+                                        Download for Desktop
+                                        <div className="stat-title">6 GB</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/" download>
+                                        Download for Mobile
+                                    </a>
+                                </li>
+                            </ul>
+                        </details>
                     </div>
                 </div>
             </div>

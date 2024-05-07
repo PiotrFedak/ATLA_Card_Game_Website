@@ -4,6 +4,7 @@ import { FaUserCircle, } from 'react-icons/fa';
 import { TbHelpHexagon } from "react-icons/tb";
 import axiosClient from '../axiosClient';
 import { useEffect } from 'react';
+import appa from '../img/appa.png';
 import P1 from '../img/P1.jpg';
 import P2 from '../img/P2.jpg';
 import P3 from '../img/P3.jpg';
@@ -12,25 +13,29 @@ import P5 from '../img/P5.jpg';
 import P6 from '../img/P6.jpg';
 
 const UserProfile = () => {
-    const [name, setName] = useState("name");
-    const [email, setEmail] = useState("Email");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("********");
     const [avatar, setAvatar] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [helpText, setHelpText] = useState("");
+    const userId = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("user_id="))
+        ?.split("=")[1];
 
     useEffect(() => {
-        const storedName = getCookie("name");
-        const storedEmail = getCookie("email");
         const storedAvatar = getCookie("avatar");
 
-        if (storedName && storedEmail) {
-            setName(storedName);
-            setEmail(storedEmail);
-        }
         if (storedAvatar) {
             setAvatar(storedAvatar);
         }
+
+        axiosClient.get(`/user/${userId}`)
+            .then(({ data }) => {
+                setName(data.user.name);
+                setEmail(data.user.email)
+            },)
     }, []);
 
 
@@ -66,13 +71,6 @@ const UserProfile = () => {
     };
 
 
-    const setCookie = (name, value, days) => {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-
     const getCookie = (name) => {
         const decodedCookie = decodeURIComponent(document.cookie);
         const cookies = decodedCookie.split(';');
@@ -85,11 +83,24 @@ const UserProfile = () => {
         return "";
     }
 
+
+    const setCookie = (name, value, days) => {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
     return (
         <div className="w-3/4 h-3/4 dark:bg-[#20354b] bg-slate-300 rounded-2xl px-8 shadow-lg mt-16">
             <section className="w-full mx-auto py-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
+                        <img src={appa} alt="Appa" className="hidden lg:block absolute right-[10em] top-1/2 -translate-y-1/2 -mt-[2em]" />
+                        <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -mt-[2em] w-[8em] overflow-hidden z-10 transform -rotate-180">
+                            <div className="border-[30px] md:border-[36px] border-[#FF5C00] md:h-[46em] md:w-[46em] rounded-full"></div>
+                        </div>
+
                         <TbHelpHexagon className="text-4xl cursor-pointer hover:text-oraange" onClick={toggleHelpText} />
                         {helpText && (
                             <span className="ml-2 dark:text-white text-lg">{helpText}</span>
@@ -193,6 +204,7 @@ const UserProfile = () => {
                                 />
                             </div>
                             <button
+                                id='saveProfile'
                                 onClick={handleSave}
                                 className="mt-6 bg-oraange text-white px-4 py-2 rounded-md hover:scale-105 sm:mt-0"
                             >
