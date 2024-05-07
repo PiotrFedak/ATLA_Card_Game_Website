@@ -22,7 +22,8 @@ const Navbar = () => {
             .then(() => {
                 setUser({});
                 setToken(null);
-                deleteCookie("avatar");
+                deleteCookie("nick");
+                deleteCookie("email");
                 window.location.reload();
             });
     };

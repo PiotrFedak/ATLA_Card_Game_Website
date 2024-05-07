@@ -19,19 +19,23 @@ const UserProfile = () => {
     const [avatar, setAvatar] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [helpText, setHelpText] = useState("");
+    const userId = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("user_id="))
+        ?.split("=")[1];
 
     useEffect(() => {
-        const storedName = getCookie("name");
-        const storedEmail = getCookie("email");
         const storedAvatar = getCookie("avatar");
 
-        if (storedName && storedEmail) {
-            setName(storedName);
-            setEmail(storedEmail);
-        }
         if (storedAvatar) {
             setAvatar(storedAvatar);
         }
+
+        axiosClient.get(`/user/${userId}`)
+            .then(({ data }) => {
+                setName(data.user.name);
+                setEmail(data.user.email)
+            },)
     }, []);
 
 
@@ -67,13 +71,6 @@ const UserProfile = () => {
     };
 
 
-    const setCookie = (name, value, days) => {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-
     const getCookie = (name) => {
         const decodedCookie = decodeURIComponent(document.cookie);
         const cookies = decodedCookie.split(';');
@@ -84,6 +81,14 @@ const UserProfile = () => {
             }
         }
         return "";
+    }
+
+
+    const setCookie = (name, value, days) => {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
     }
 
     return (

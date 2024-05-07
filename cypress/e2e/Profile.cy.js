@@ -3,7 +3,7 @@ it("successfully changing data in profile ", () => {
 
   cy.get("button").contains("Sign up now").click();
   cy.get("#name").type("joe211");
-  cy.get("#email").type("Joe21411@gmail.com");
+  cy.get("#email").type("Joe214123@gmail.com");
   cy.get("#password").type("123");
   cy.get("button").contains("Sign Up").click();
 

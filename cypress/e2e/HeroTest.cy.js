@@ -7,7 +7,7 @@ describe('template spec', () => {
     cy.contains('ATLA CARD GAME.').should('be.visible');
     cy.contains('Game inside the World of Avatar The Last Airbender').should('be.visible');
     cy.contains('Available on both mobile and desktop devices!').should('be.visible');
-    cy.contains('Download for Desktop').should('be.visible');
-    cy.contains('Download for Mobile').should('be.visible');
+    cy.contains('Play Now!').should('be.visible');
+
   })
 })
