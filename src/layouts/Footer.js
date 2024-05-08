@@ -32,7 +32,7 @@ const Footer = () => {
     }, []);
 
     return (
-        <div className='max-w-[1240px] border-t-2 mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-custom-dark dark:text-white '>
+        <div id="Footer" className='max-w-[1240px] border-t-2 mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-custom-dark dark:text-white '>
             <div>
                 <h1 className='w-full text-5xl font-bold text-[#FF5C00]'>ATLA.</h1>
                 <p id="FooterText" className='py-4'>A student project aimed at creating a card game, in the world of avatar the last airbender</p>
@@ -74,6 +74,7 @@ const Footer = () => {
             {showButton && (
                 <button
                     className='fixed bottom-8 right-8 bg-[#FF5C00] text-white p-4 rounded-full shadow-lg focus:outline-none hover:scale-110 transition-all'
+                    id="ArrowUP"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                     <FaArrowUp size={24} />

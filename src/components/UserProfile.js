@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { FaGear, } from 'react-icons/fa6';
 import { FaUserCircle, } from 'react-icons/fa';
-import { TbHelpHexagon } from "react-icons/tb";
 import axiosClient from '../lib/axiosClient';
 import { useEffect } from 'react';
+import HelpButton from './ui/HelpButton';
 import appa from '../img/appa.png';
 import P1 from '../img/P1.jpg';
 import P2 from '../img/P2.jpg';
@@ -100,11 +100,7 @@ const UserProfile = () => {
                         <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -mt-[2em] w-[8em] overflow-hidden z-10 transform -rotate-180">
                             <div className="border-[30px] md:border-[36px] border-[#FF5C00] md:h-[46em] md:w-[46em] rounded-full"></div>
                         </div>
-
-                        <TbHelpHexagon className="text-4xl cursor-pointer hover:text-oraange" onClick={toggleHelpText} />
-                        {helpText && (
-                            <span className="ml-2 dark:text-white text-lg">{helpText}</span>
-                        )}
+                        <HelpButton onClick={toggleHelpText} helpText={helpText} />
                     </div>
                     <button id="Gear" className="text-4xl hover:text-oraange" onClick={handleEdit}>
                         <FaGear />
