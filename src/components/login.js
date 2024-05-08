@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { AiFillFacebook } from 'react-icons/ai';
-import axiosClient from '../axiosClient';
+import axiosClient from '../lib/axiosClient';
 import PropTypes from 'prop-types';
 import { useStateContext } from "../contexts/ContextProvider";
 import { ToastContainer, toast } from 'react-toastify';

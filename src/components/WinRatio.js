@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PieChart } from 'react-chartkick';
 import 'chartkick/chart.js';
-import axiosClient from '../axiosClient';
+import axiosClient from '../lib/axiosClient';
 
 const WinRatio = () => {
     const [winLossData, setWinLossData] = useState({ wins: 0, losses: 0, gamesPlayed: 0 });
@@ -47,7 +47,7 @@ const WinRatio = () => {
                     <div className="flex top-14 left-24 absolute px-4 float-left mx-12 gap-2">
                         Win Rate:
                     </div>
-                    <div className='flex top-12 right-[50%] absolute float-center mx-30 font-bold text-xl '>
+                    <div className='flex top-12 right-[48%] absolute float-center font-bold text-xl'>
                         User: <span>&nbsp;</span>
                         <div className='text-[#FF5C00] font-bold md:text-xl sm:text-1xl text-lg mr-[4]'> {userName} </div>
                     </div>

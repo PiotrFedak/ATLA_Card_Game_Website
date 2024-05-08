@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import axiosClient from '../axiosClient';
+import axiosClient from '../lib/axiosClient';
 import PropTypes from 'prop-types';
 import { useStateContext } from "../contexts/ContextProvider";
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaGear, } from 'react-icons/fa6';
 import { FaUserCircle, } from 'react-icons/fa';
 import { TbHelpHexagon } from "react-icons/tb";
-import axiosClient from '../axiosClient';
+import axiosClient from '../lib/axiosClient';
 import { useEffect } from 'react';
 import appa from '../img/appa.png';
 import P1 from '../img/P1.jpg';

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Switcher from "../Switcher";
 import { useStateContext } from "../contexts/ContextProvider";
-import axiosClient from "../axiosClient";
+import axiosClient from "../lib/axiosClient";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { characters } from './charactersData';
+import { characters } from '../assets/charactersData';
 import { FaArrowLeft, FaArrowRight, FaFastForward } from 'react-icons/fa';
 import CharacterIterator from './CharacterIterator';
 

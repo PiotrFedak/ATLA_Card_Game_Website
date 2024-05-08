@@ -1,14 +1,14 @@
 import React from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../layouts/Footer";
+import Header from "../layouts/Header";
 import Hero from "../components/Hero";
 import Img from "../components/Img";
 import About from "../components/About";
 import PlayNow from "../components/PlayNow";
 import Email from "../components/Email";
 import Carousel from "../components/Carousel";
-import Block from "../components/Block";
-import Screens from "../components/Screens";
+import Block from "../layouts/Block";
+import Screens from "../utils/Screens";
 
 const Home = () => {
   return (
