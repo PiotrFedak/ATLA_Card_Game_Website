@@ -43,7 +43,7 @@ const Navbar = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
-                        <button onClick={handleLogout}> Logout </button>
+                        <button id="logout" onClick={handleLogout}> Logout </button>
                     </li>
                     <div className="p-4">
                         <Switcher />

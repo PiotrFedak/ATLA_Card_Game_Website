@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Switcher from "../Switcher";
 import { HashLink } from 'react-router-hash-link';
-
+import DownloadButton from '../components/ui/DownloadButton';
 const Header = () => {
     const [nav, setNav] = useState(false);
 
@@ -19,6 +19,7 @@ const Header = () => {
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
                         <Link to="/Auth">Login</Link>
                     </li>
+                    <DownloadButton />
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
                         <HashLink smooth to="#carousel">Characters</HashLink></li>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
