@@ -26,6 +26,7 @@ const Register = ({ toggleForm }) => {
             })
             .catch((err) => {
                 console.error(err);
+                // notify('Login failed', 'error');
             });
     };
 
