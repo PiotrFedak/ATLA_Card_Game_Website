@@ -12,7 +12,7 @@ const About = () => {
                 <div>
                     <h1 className='py-4 text-5xl'>Elements </h1>
                     <p id="Elements" className='py-4 text-2xl'>
-                        There is 4 different elemental styles to choose from
+                        In the world of avatar there are 4 main elements
                     </p>
 
                     <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-4'>
