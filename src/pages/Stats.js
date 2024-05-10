@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar';
+import Navbar from '../layouts/Navbar';
 import WinRatio from '../components/WinRatio';
 import Block from '../layouts/Block';
 const Stats = () => {

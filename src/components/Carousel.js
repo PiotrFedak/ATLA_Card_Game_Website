@@ -3,7 +3,6 @@ import { characters } from '../assets/charactersData';
 import CharacterIterator from './CharacterIterator';
 import CarouselButtons from './ui/CarouselButtons';
 
-
 const Carousel = () => {
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const characterIterator = useRef(new CharacterIterator(characters));

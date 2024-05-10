@@ -8,7 +8,7 @@ import PlayNow from "../components/PlayNow";
 import Email from "../components/Email";
 import Carousel from "../components/Carousel";
 import Block from "../layouts/Block";
-import Screens from "../utils/Screens";
+import Screens from "../components/Screens";
 
 const Home = () => {
   return (
