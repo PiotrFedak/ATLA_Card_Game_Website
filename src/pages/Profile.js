@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../layouts/Navbar';
 import UserProfile from '../components/UserProfile';
 
 const Profile = () => {

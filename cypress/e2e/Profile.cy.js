@@ -3,7 +3,7 @@ it("successfully changing data in profile ", () => {
 
   cy.get("button").contains("Sign up now").click();
   cy.get("#name").type("joe211");
-  cy.get("#email").type("Joe214123@gmail.com");
+  cy.get("#email").type("Joe2148231@gmail.com");
   cy.get("#password").type("123");
   cy.get("button").contains("Sign Up").click();
 
@@ -16,10 +16,10 @@ it("successfully changing data in profile ", () => {
 
   cy.get("#Gear").should("exist").click();;
 
-  cy.get("#email").type("newEmailTest@wp.pl");
-  cy.get("#name").type("newNickname");
+  cy.get("#email").type("newEmailTest2@wp.pl");
+  cy.get("#name").type("newNickname2");
   cy.get("#saveProfile").click();
 
-  cy.contains('newNickname').should('be.visible');
-  cy.contains('newEmailTest@wp.pl').should('be.visible');
+  cy.contains('newNickname1').should('be.visible');
+  cy.contains('newEmailTest1@wp.pl').should('be.visible');
 });

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
+import Header from '../layouts/Header';
 import Login from '../components/Login';
 import Register from '../components/Register';
 import backgroundImage from '../img/background.jpg';
@@ -13,7 +13,7 @@ export default function Auth() {
     }
 
     if (token == 1) {
-        console.log('działa')
+        console.log('works')
     }
 
     return (

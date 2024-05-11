@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../../src/components/Footer';
+import Footer from '../../src/layouts/Footer';
 
 describe('<Footer />', () => {
   it('Navigates to correct GitHub profiles', () => {

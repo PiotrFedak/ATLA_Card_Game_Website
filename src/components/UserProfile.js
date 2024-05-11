@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { FaGear, } from 'react-icons/fa6';
 import { FaUserCircle, } from 'react-icons/fa';
-import { TbHelpHexagon } from "react-icons/tb";
-import axiosClient from '../axiosClient';
+import axiosClient from '../lib/axiosClient';
 import { useEffect } from 'react';
+import HelpButton from './ui/HelpButton';
 import appa from '../img/appa.png';
-import P1 from '../img/P1.jpg';
-import P2 from '../img/P2.jpg';
-import P3 from '../img/P3.jpg';
-import P7 from '../img/P7.jpg';
-import P5 from '../img/P5.jpg';
-import P6 from '../img/P6.jpg';
+import AvatarGallery from '../assets/AvatarGallery';
+import { RiArrowGoBackLine } from "react-icons/ri";
+
 
 const UserProfile = () => {
     const [name, setName] = useState("");
@@ -19,17 +16,21 @@ const UserProfile = () => {
     const [avatar, setAvatar] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [helpText, setHelpText] = useState("");
+    const [preName, setPreName] = useState("");
     const userId = document.cookie
+
         .split("; ")
         .find((row) => row.startsWith("user_id="))
         ?.split("=")[1];
 
     useEffect(() => {
         const storedAvatar = getCookie("avatar");
+        const storedName = getCookie("name");
 
         if (storedAvatar) {
             setAvatar(storedAvatar);
         }
+        setPreName(storedName);
 
         axiosClient.get(`/user/${userId}`)
             .then(({ data }) => {
@@ -37,7 +38,6 @@ const UserProfile = () => {
                 setEmail(data.user.email)
             },)
     }, []);
-
 
     const handleEdit = () => {
         setIsEditing(!isEditing);
@@ -91,6 +91,18 @@ const UserProfile = () => {
         document.cookie = name + "=" + value + ";" + expires + ";path=/";
     }
 
+    const handleGoBack = () => {
+        setPreName(name);
+        setName(preName);
+        axiosClient.post('/update', { name: preName })
+            .then(response => {
+                console.log('Nick updated successfully:', response.data);
+            })
+            .catch(error => {
+                console.error('Error updating nick:', error);
+            });
+    };
+
     return (
         <div className="w-3/4 h-3/4 dark:bg-[#20354b] bg-slate-300 rounded-2xl px-8 shadow-lg mt-16">
             <section className="w-full mx-auto py-4">
@@ -100,11 +112,7 @@ const UserProfile = () => {
                         <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -mt-[2em] w-[8em] overflow-hidden z-10 transform -rotate-180">
                             <div className="border-[30px] md:border-[36px] border-[#FF5C00] md:h-[46em] md:w-[46em] rounded-full"></div>
                         </div>
-
-                        <TbHelpHexagon className="text-4xl cursor-pointer hover:text-oraange" onClick={toggleHelpText} />
-                        {helpText && (
-                            <span className="ml-2 dark:text-white text-lg">{helpText}</span>
-                        )}
+                        <HelpButton onClick={toggleHelpText} helpText={helpText} />
                     </div>
                     <button id="Gear" className="text-4xl hover:text-oraange" onClick={handleEdit}>
                         <FaGear />
@@ -129,46 +137,7 @@ const UserProfile = () => {
                 <div className="mt-10 w-fit mx-auto xl:mt-2 lg:mt-2 md:mt-0">
                     {isEditing ? (
                         <>
-                            <label className='block font-bold text-lg text-left'>Profile Pictures:</label>
-                            <div className="flex justify-items-center space-x-6">
-                                <img
-                                    src={P1}
-                                    alt="Avatar 1"
-                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P1 ? 'border-2 border-oraange' : ''}`}
-                                    onClick={() => handleAvatarSelect(P1)}
-                                />
-                                <img
-                                    src={P2}
-                                    alt="Avatar 2"
-                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P2 ? 'border-2 border-oraange' : ''}`}
-                                    onClick={() => handleAvatarSelect(P2)}
-                                />
-                                <img
-                                    src={P3}
-                                    alt="Avatar 3"
-                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P3 ? 'border-2 border-oraange' : ''}`}
-                                    onClick={() => handleAvatarSelect(P3)}
-                                />
-                                <img
-                                    src={P7}
-                                    alt="Avatar 4"
-                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P7 ? 'border-2 border-oraange' : ''}`}
-                                    onClick={() => handleAvatarSelect(P7)}
-                                />
-                                <img
-                                    src={P5}
-                                    alt="Avatar 5"
-                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P5 ? 'border-2 border-oraange' : ''}`}
-                                    onClick={() => handleAvatarSelect(P5)}
-                                />
-                                <img
-                                    src={P6}
-                                    alt="Avatar 6"
-                                    className={`w-16 h-16 rounded-full cursor-pointer transform hover:scale-125 transition duration-300 ${avatar === P6 ? 'border-2 border-oraange' : ''}`}
-                                    onClick={() => handleAvatarSelect(P6)}
-                                />
-
-                            </div>
+                            <AvatarGallery handleAvatarSelect={handleAvatarSelect} avatar={avatar} />
                             <div className="w-full mb-4 mt-6">
                                 <label htmlFor="name" className="block font-bold text-lg">Username:</label>
                                 <input
@@ -213,8 +182,17 @@ const UserProfile = () => {
                         </>
                     ) : (
                         <>
+                            <div className="divider"></div>
+                            <h2 className="font-light">Current Nickname: </h2>
                             <h2 className="font-bold tracking-wide sm:text-xl md:text-2xl">{name}</h2>
-                            <h2 className="font-bold mt-5 w-fit mx-auto sm:text-xl md:text-2xl">{email}</h2>
+                            <div className="flex items-center">
+                                <span className="font-light mr-2 mt-0">Go back to old name</span>
+                                <RiArrowGoBackLine onClick={handleGoBack} className='text-white rounded-md hover:scale-105 sm:mt-0' />
+                            </div>
+                            <div className="divider"></div>
+                            <h2 className="font-light">Email: </h2>
+                            <h2 className="font-bold w-fit mx-auto sm:text-xl md:text-2xl">{email}</h2>
+                            <div className="divider"></div>
                         </>
                     )}
                 </div>

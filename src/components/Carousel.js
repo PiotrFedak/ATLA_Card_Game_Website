@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { characters } from './charactersData';
-import { FaArrowLeft, FaArrowRight, FaFastForward } from 'react-icons/fa';
+import { characters } from '../assets/charactersData';
 import CharacterIterator from './CharacterIterator';
+import CarouselButtons from './ui/CarouselButtons';
 
 const Carousel = () => {
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -70,22 +70,13 @@ const Carousel = () => {
                     )
                 )}
             </div>
-            <div className="absolute top-1/2 -translate-y-1/2 left-8">
-                <button id="Left" className="text-3xl" onClick={goToPreviousCards}>
-                    <FaArrowLeft />
-                </button>
-            </div>
-            <div className="absolute top-1/2 -translate-y-1/2 right-8">
-                <button id="right" className="text-3xl" onClick={goToNextCards}>
-                    <FaArrowRight />
-                </button>
-            </div>
-            <div className="absolute top-1/2 -translate-y-1/2 right-28">
-                <button id="fastForward" className="text-3xl" onClick={goFastForward}>
-                    <FaFastForward />
-                </button>
-            </div>
+            <CarouselButtons
+                goToPreviousCards={goToPreviousCards}
+                goToNextCards={goToNextCards}
+                goFastForward={goFastForward}
+            />
         </div>
+
     );
 };
 

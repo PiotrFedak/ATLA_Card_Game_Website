@@ -1,7 +1,10 @@
 import React, { useRef } from 'react';
-import axiosClient from '../axiosClient';
+import axiosClient from '../lib/axiosClient';
 import PropTypes from 'prop-types';
 import { useStateContext } from "../contexts/ContextProvider";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { notify } from './ui/Notify';
 
 const Register = ({ toggleForm }) => {
     const nameRef = useRef();
@@ -26,6 +29,7 @@ const Register = ({ toggleForm }) => {
             })
             .catch((err) => {
                 console.error(err);
+                notify('Register failed', 'error');
             });
     };
 
@@ -68,6 +72,7 @@ const Register = ({ toggleForm }) => {
             <button type="submit" className='w-full py-3 mt-8 bg-oraange hover:bg-orange-800 relative text-white'>Sign Up</button>
             <p className='flex items-center mt-2'><input className='mr-2' type="checkbox" />Remember Me</p>
             <p className='text-center mt-8'>Already have an account? <button className="text-custom-brown font-semibold bg-transparent border-none" onClick={toggleForm}>Sign in here</button></p>
+            <ToastContainer />
         </form>
     );
 };

@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { AiFillFacebook } from 'react-icons/ai';
-import axiosClient from '../axiosClient';
+import axiosClient from '../lib/axiosClient';
 import PropTypes from 'prop-types';
 import { useStateContext } from "../contexts/ContextProvider";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { notify } from './ui/Notify';
 
 const Login = ({ toggleForm }) => {
     const emailRef = useRef();
@@ -31,19 +32,6 @@ const Login = ({ toggleForm }) => {
                 notify('Login failed', 'error');
             });
     };
-
-    const notify = (message, type = 'info') => {
-        toast[type](message, {
-            position: "bottom-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-        });
-    };
-
 
     return (
         <form onSubmit={handleLogin} className='max-w-[400px] w-full mx-auto bg-white dark:bg-gray-800 dark:text-white p-8 rounded-3xl'>

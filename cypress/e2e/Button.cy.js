@@ -1,5 +1,5 @@
-describe('template spec', () => {
-  it('passes', () => {
+describe('Buttons on site works', () => {
+  it('Allows user to change theme to dark and open play button', () => {
     cy.visit('http://localhost:3000');
 
     cy.contains('Play Now!').should('exist');
