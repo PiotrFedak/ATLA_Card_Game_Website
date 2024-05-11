@@ -13,7 +13,7 @@ export default function Auth() {
     }
 
     if (token == 1) {
-        console.log('działa')
+        console.log('works')
     }
 
     return (

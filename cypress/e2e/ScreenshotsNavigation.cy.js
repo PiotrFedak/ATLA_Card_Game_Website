@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('User can watch diffrent screenshots from game', () => {
   it('Screenshots navigation exist, is visible and works', () => {
     cy.visit('http://localhost:3000');
 

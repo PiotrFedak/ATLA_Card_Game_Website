@@ -1,4 +1,4 @@
-describe('Header component', () => {
+describe('User Can enter to auth page from home site', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000');
     });

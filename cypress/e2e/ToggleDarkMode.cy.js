@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Checking dark mode', () => {
   it('It should toggle between light and dark mode', () => {
     cy.visit('http://localhost:3000');
     cy.get('body').should('not.have.class', 'dark-mode');

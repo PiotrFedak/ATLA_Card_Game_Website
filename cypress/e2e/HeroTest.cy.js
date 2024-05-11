@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Hero display', () => {
   it('should render correctly', () => {
     cy.visit('http://localhost:3000')
     cy.get('#about').should('be.visible');

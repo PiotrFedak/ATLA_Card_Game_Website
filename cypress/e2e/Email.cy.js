@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Sending Email', () => {
   it('Find email form on the site then send email', () => {
     cy.visit('http://localhost:3000');
     cy.window().scrollTo(0, 4755);
