@@ -5,11 +5,11 @@ const AboutCard = (props) => {
     return (
         <div className='flex flex-col border border-oraange text-left rounded-2xl py-12 px-8 hover:transform hover:scale-110 transition-transform duration-300'>
             <div>
-                <div className='bg-[#e6dfee] inline-flex  rounded-full'>
+                <div className='inline-flex'>
                     {props.icon}
                 </div>
                 <h3 className='text-xl font-bold py-4 '>{props.heading}</h3>
-                <p>
+                <p className=''>
                     {props.text}
                 </p>
             </div>

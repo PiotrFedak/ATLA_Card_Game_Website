@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import HelpButton from './ui/HelpButton';
 import appa from '../img/appa.png';
 import AvatarGallery from '../assets/AvatarGallery';
+import { RiArrowGoBackLine } from "react-icons/ri";
+
 
 const UserProfile = () => {
     const [name, setName] = useState("");
@@ -14,6 +16,7 @@ const UserProfile = () => {
     const [avatar, setAvatar] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const [helpText, setHelpText] = useState("");
+    const [preName, setPreName] = useState("");
     const userId = document.cookie
 
         .split("; ")
@@ -22,10 +25,12 @@ const UserProfile = () => {
 
     useEffect(() => {
         const storedAvatar = getCookie("avatar");
+        const storedName = getCookie("name");
 
         if (storedAvatar) {
             setAvatar(storedAvatar);
         }
+        setPreName(storedName);
 
         axiosClient.get(`/user/${userId}`)
             .then(({ data }) => {
@@ -33,7 +38,6 @@ const UserProfile = () => {
                 setEmail(data.user.email)
             },)
     }, []);
-
 
     const handleEdit = () => {
         setIsEditing(!isEditing);
@@ -86,6 +90,18 @@ const UserProfile = () => {
         const expires = "expires=" + date.toUTCString();
         document.cookie = name + "=" + value + ";" + expires + ";path=/";
     }
+
+    const handleGoBack = () => {
+        setPreName(name);
+        setName(preName);
+        axiosClient.post('/update', { name: preName })
+            .then(response => {
+                console.log('Nick updated successfully:', response.data);
+            })
+            .catch(error => {
+                console.error('Error updating nick:', error);
+            });
+    };
 
     return (
         <div className="w-3/4 h-3/4 dark:bg-[#20354b] bg-slate-300 rounded-2xl px-8 shadow-lg mt-16">
@@ -166,8 +182,17 @@ const UserProfile = () => {
                         </>
                     ) : (
                         <>
+                            <div className="divider"></div>
+                            <h2 className="font-light">Current Nickname: </h2>
                             <h2 className="font-bold tracking-wide sm:text-xl md:text-2xl">{name}</h2>
-                            <h2 className="font-bold mt-5 w-fit mx-auto sm:text-xl md:text-2xl">{email}</h2>
+                            <div className="flex items-center">
+                                <span className="font-light mr-2 mt-0">Go back to old name</span>
+                                <RiArrowGoBackLine onClick={handleGoBack} className='text-white rounded-md hover:scale-105 sm:mt-0' />
+                            </div>
+                            <div className="divider"></div>
+                            <h2 className="font-light">Email: </h2>
+                            <h2 className="font-bold w-fit mx-auto sm:text-xl md:text-2xl">{email}</h2>
+                            <div className="divider"></div>
                         </>
                     )}
                 </div>
