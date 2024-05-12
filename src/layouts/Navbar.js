@@ -43,6 +43,9 @@ const Navbar = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
+                        <Link id="MatchHistory" to="/MatchHistory">MatchHistory</Link>
+                    </li>
+                    <li className='p-4 transition-all duration-300 ease-in-out hover:scale-110 text-xl'>
                         <button id="logout" onClick={handleLogout}> Logout </button>
                     </li>
                     <div className="p-4">
@@ -62,6 +65,12 @@ const Navbar = () => {
                     </li>
                     <li className='p-4 border-b border-gray-600'>
                         <Link to="/">Home</Link>
+                    </li>
+                    <li className='p-4 border-b border-gray-600'>
+                        <Link to="/MatchHistory">MatchHistory</Link>
+                    </li>
+                    <li className='p-4 border-b border-gray-600'>
+                        <button id="logout" onClick={handleLogout}> Logout </button>
                     </li>
                     <li className='p-4'><Switcher /></li>
                 </ul>
