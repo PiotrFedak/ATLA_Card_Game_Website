@@ -6,6 +6,7 @@ import Auth from "./pages/Auth";
 import DefaultLayout from './access/DefaultLayout';
 import GuestLayout from './access/GuestLayout';
 import Profile from "./pages/Profile";
+import MatchHistory from "./pages/MatchHistory";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/Profile',
         element: <Profile />,
+      },
+      {
+        path: '/MatchHistory',
+        element: <MatchHistory />,
       },
     ],
   },

@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosClientWeb = axios.create({
-    baseURL: 'https://apiatlaphp.cloud/api'
+    baseURL: 'https://29fe-31-60-42-13.ngrok-free.app/api'
 })
 
 axiosClientWeb.interceptors.request.use((config) => {
