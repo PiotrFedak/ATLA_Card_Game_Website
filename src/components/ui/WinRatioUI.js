@@ -23,7 +23,7 @@ const WinRatioUI = ({ winLossData, userName }) => {
                     <div className="flex top-14 left-24 absolute px-4 float-left mx-12 gap-2 dark:text-white">
                         Win Rate:
                     </div>
-                    <div className='flex top-12 right-[48%] absolute float-center font-bold text-xl dark:text-white'>
+                    <div className='flex top-12 right-[46%] absolute float-center font-bold text-xl dark:text-white'>
                         User: <span>&nbsp;</span>
                         <div className='text-[#FF5C00] font-bold md:text-xl sm:text-1xl text-lg mr-[4]'> {userName} </div>
                     </div>

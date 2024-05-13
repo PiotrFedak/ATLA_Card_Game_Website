@@ -47,7 +47,6 @@ const Hero = () => {
                                 <li>
                                     <a href="/AtlaTheGame.rar" download id="Desktop">
                                         Download for Desktop
-                                        <div className="stat-title">6 GB</div>
                                     </a>
                                 </li>
                                 <li>
