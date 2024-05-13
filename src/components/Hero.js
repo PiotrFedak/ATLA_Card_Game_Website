@@ -50,7 +50,7 @@ const Hero = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/" download>
+                                    <a href="/Atla 1.0" download id="MobileDownload">
                                         Download for Mobile
                                     </a>
                                 </li>
