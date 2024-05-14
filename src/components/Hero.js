@@ -45,10 +45,11 @@ const Hero = () => {
                             <summary id="Play now" data-testid='button-test' className="m-1 bg-phoneDark dark:bg-[#FF5C00] w-[200px] rounded-md font-medium my-6 mx-2 py-3 text-white text-2xl">Play Now!</summary>
                             <ul className="p-2 mt-24 shadow menu dropdown-content z-[1] bg-[#FF5C00] dark:bg-phoneDark text-black dark:text-white rounded-box w-64 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <li>
-                                    <a href="/AtlaTheGame.rar" download id="Desktop">
+                                    <a href="https://drive.google.com/file/d/1wSXhTFyjFgFJqZrEnsLr4KohUNpzKMPM/view?usp=sharing" id="Desktop">
                                         Download for Desktop
                                     </a>
                                 </li>
+
                                 <li>
                                     <a href="https://www.transfernow.net/pl/bld?utm_source=20240513rA3AhQSB" id="MobileDownload">
                                         Download for Mobile
