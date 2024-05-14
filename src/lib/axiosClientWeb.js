@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosClientWeb = axios.create({
-    baseURL: 'https://29fe-31-60-42-13.ngrok-free.app/api'
+    baseURL: 'https://5eef-46-134-131-118.ngrok-free.app/api'
 })
 
 axiosClientWeb.interceptors.request.use((config) => {
