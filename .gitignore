@@ -20,6 +20,7 @@ config.js
 .env.test.local
 .env.production.local
 AtlaTheGame.rar
+src/downloads/Atla 1.1.apk
 
 npm-debug.log*
 yarn-debug.log*
