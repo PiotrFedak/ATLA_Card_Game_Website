@@ -22,7 +22,7 @@ const DownloadButton = () => {
     return (
         <>
             {showButton && (
-                <a href="/downloads/Atla 1.1.apk" download>
+                <a href="https://drive.google.com/uc?export=download&id=1H5wCAo5o-4eZQRCL5L1gqeQt3ZBwjd1Z" download>
                     <button
                         className='fixed top-8 right-8 bg-[#FF5C00] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all'
                         id="DownloadApp"
